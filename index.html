@@ -18,23 +18,27 @@
     </div>
 
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
+
+    <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+    </div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-left">
 
 <h3>Operations & Automation Professional</h3>
 
 <h1>
-Abdullah
-<span>Al Mamun</span>
+Abdullah <span>Al Mamun</span>
 </h1>
 
 <h2>
@@ -42,21 +46,20 @@ Operations & AI Workflow Automation Engineer
 </h2>
 
 <p>
-
-I build automation systems that eliminate repetitive work, improve HR processes, automate content operations and help businesses save time using AI, n8n, Google Workspace and Zoho.
-
+I lead day-to-day operations for a 50+ person team and build automation systems that eliminate repetitive work — HR coordination, content operations, and publishing pipelines — using AI, n8n, Google Workspace and Zoho.
 </p>
 
 <div class="buttons">
+<a href="#projects" class="primary">View My Projects</a>
+<a href="assets/Abdullah-Al-Mamun-CV.pdf" class="secondary" download>Download CV</a>
+</div>
 
-<button class="primary">
-View My Projects
-</button>
-
-<button class="secondary">
-Download CV
-</button>
-
+<div class="hero-quick-links">
+    <a href="mailto:almamunn2001@gmail.com">almamunn2001@gmail.com</a>
+    <span class="dot">•</span>
+    <a href="https://linkedin.com/in/almamun0fficial" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="dot">•</span>
+    <span>Dhaka, Bangladesh</span>
 </div>
 
 </div>
@@ -64,9 +67,7 @@ Download CV
 <div class="hero-right">
 
 <div class="photo">
-
 <img src="images/profile.jpg" alt="Abdullah Al Mamun">
-
 </div>
 
 </div>
@@ -86,8 +87,8 @@ Download CV
 </div>
 
 <div class="card">
-<h1>50+</h1>
-<p>Employees Coordinated</p>
+<h1>11</h1>
+<p>Automations Shipped</p>
 </div>
 
 <div class="card">
@@ -97,56 +98,280 @@ Download CV
 
 </section>
 
-<section class="projects">
+<section class="about" id="about">
 
-    <h2>Featured Projects</h2>
+    <h2>About Me</h2>
 
-    <div class="project-grid">
+    <div class="about-grid">
 
-        <div class="project-card">
-            <h3>📊 HR Daily Summary Automation</h3>
+        <div class="about-text">
             <p>
-                Automatically collects employee work reports,
-                generates an HTML summary and emails it to the CEO.
+                I'm an Administrative Coordinator currently leading daily operations for a 50+ member media
+                organization — overseeing team coordination, HR administration, reporting, and cross-functional
+                workflow between editorial, marketing, design, and administration.
             </p>
-
-            <div class="tech">
-                <span>n8n</span>
-                <span>Google Sheets</span>
-                <span>Zoho</span>
-            </div>
+            <p>
+                I've been promoted three times in three years within the same organization
+                (Jr. Graphic Designer → Social Media Manager → HR &amp; Admin → Administrative Coordinator), and
+                along the way I started building automation systems to solve the repetitive parts of my own job —
+                that grew into a full toolkit of HR, content, and publishing automations now running in production.
+            </p>
+            <p>
+                I'm currently pursuing an Executive MBA in Marketing Management at Presidency University,
+                Bangladesh, focused on sharpening my ability to lead digital transformation and technology strategy.
+            </p>
         </div>
 
-        <div class="project-card">
-            <h3>📝 Editor Distribution System</h3>
-            <p>
-                Assigns scripts to editors automatically using
-                a round-robin system and sends notification emails.
-            </p>
-
-            <div class="tech">
-                <span>n8n</span>
-                <span>Google Sheets</span>
+        <div class="about-facts">
+            <div class="fact">
+                <h4>Role</h4>
+                <p>Administrative Coordinator, Gcontent</p>
             </div>
-        </div>
-
-        <div class="project-card">
-            <h3>🎬 AI Viral Video Generator</h3>
-            <p>
-                Creates short videos automatically using
-                FFmpeg, Whisper AI and captions.
-            </p>
-
-            <div class="tech">
-                <span>FFmpeg</span>
-                <span>Whisper AI</span>
-                <span>n8n</span>
+            <div class="fact">
+                <h4>Location</h4>
+                <p>Dhaka, Bangladesh</p>
+            </div>
+            <div class="fact">
+                <h4>Education</h4>
+                <p>Executive MBA (in progress) — Presidency University<br>BA in English — University of Dhaka</p>
+            </div>
+            <div class="fact">
+                <h4>Focus</h4>
+                <p>Operations, HR Administration, Workflow Automation</p>
             </div>
         </div>
 
     </div>
 
 </section>
+
+<section class="experience" id="experience">
+
+    <h2>Experience</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Administrative Coordinator</h3>
+                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2025 – Present</span>
+                <ul>
+                    <li>Lead daily operations for a workforce of 50+ employees across editorial, marketing, design, and administration.</li>
+                    <li>Implement AI-driven workflow automation using n8n, saving 30+ hours per week.</li>
+                    <li>Coordinate recruitment, onboarding, and policy implementation; prepare monthly reporting for leadership.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>HR & Admin</h3>
+                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2024 – Mar 2025</span>
+                <ul>
+                    <li>Managed HR documentation, attendance, and leave records for 50+ active employees.</li>
+                    <li>Supported recruitment end-to-end, from job posting through onboarding.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Social Media Manager</h3>
+                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Dec 2022 – Mar 2024</span>
+                <ul>
+                    <li>Planned and executed data-driven social media strategy, growing audience engagement by 30%.</li>
+                    <li>Coordinated with designers, editors, and writers for timely content delivery.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Jr. Graphic Designer</h3>
+                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Jan 2022 – Jun 2023</span>
+                <ul>
+                    <li>Produced visual and video content using Adobe Illustrator, Photoshop, Premiere Pro, and Canva Pro.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="projects" id="projects">
+
+    <h2>Featured Projects</h2>
+    <p class="section-sub">Automations I've designed and shipped, grouped by what they do.</p>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hr">HR & Operations</button>
+        <button class="filter-btn" data-filter="content">Content & Publishing</button>
+        <button class="filter-btn" data-filter="utility">Utility & Reliability</button>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card" data-category="hr">
+            <h3>📊 Daily Work Summary → CEO Report</h3>
+            <p>Pulls each employee's daily work log, compiles an HTML summary, and emails it to the CEO automatically at day's end.</p>
+            <div class="tech"><span>n8n</span><span>Google Sheets</span><span>HTML Mail</span></div>
+        </div>
+
+        <div class="project-card" data-category="hr">
+            <h3>📝 Editor Distribution System 2026</h3>
+            <p>Assigns scripts to editors automatically using a round-robin system and emails each editor their task.</p>
+            <div class="tech"><span>n8n</span><span>Google Sheets</span><span>Gmail</span></div>
+        </div>
+
+        <div class="project-card" data-category="hr">
+            <h3>📧 Candidate Interview Mailer</h3>
+            <p>Sends interview status updates to hundreds of candidates automatically during hiring rounds.</p>
+            <div class="tech"><span>n8n</span><span>Sheets</span><span>Gmail</span></div>
+        </div>
+
+        <div class="project-card" data-category="hr">
+            <h3>📥 Script Collection Aggregator</h3>
+            <p>Watches every writer's individual sheet and appends new scripts into one master tracking sheet.</p>
+            <div class="tech"><span>n8n</span><span>Google Sheets</span></div>
+        </div>
+
+        <div class="project-card" data-category="hr">
+            <h3>📈 Content Tracker</h3>
+            <p>Tracks and updates total content created across the whole team throughout the day, live.</p>
+            <div class="tech"><span>n8n</span><span>Google Sheets</span></div>
+        </div>
+
+        <div class="project-card" data-category="content">
+            <h3>🎬 AutoVid + Caption Generator</h3>
+            <p>Creates viral-style reels with satisfying background video and large captions, at zero cost.</p>
+            <div class="tech"><span>FFmpeg</span><span>Whisper AI</span><span>n8n</span></div>
+        </div>
+
+        <div class="project-card" data-category="content">
+            <h3>▶️ YouTube Auto-Publisher</h3>
+            <p>Takes finished content straight through to a live YouTube upload automatically.</p>
+            <div class="tech"><span>n8n</span><span>YouTube API</span></div>
+        </div>
+
+        <div class="project-card" data-category="content">
+            <h3>🎧 YouTube Audio + Satisfying Video Publisher</h3>
+            <p>Pairs audio content with satisfying background visuals and auto-publishes to YouTube.</p>
+            <div class="tech"><span>n8n</span><span>FFmpeg</span><span>YouTube API</span></div>
+        </div>
+
+        <div class="project-card" data-category="content">
+            <h3>🎵 TikTok Auto-Publisher</h3>
+            <p>Downloads finished videos from Google Drive and publishes them to TikTok via browser automation.</p>
+            <div class="tech"><span>n8n</span><span>Playwright</span><span>Google Drive</span></div>
+        </div>
+
+        <div class="project-card" data-category="utility">
+            <h3>🤖 Telegram English–Bangla Dictionary Bot</h3>
+            <p>Instantly returns Bangla meanings for English words on request, right inside Telegram.</p>
+            <div class="tech"><span>n8n</span><span>Telegram API</span></div>
+        </div>
+
+        <div class="project-card" data-category="utility">
+            <h3>🛠️ Workflow Reliability Monitor</h3>
+            <p>Watches automation pipelines for failures and flags them immediately, before they miss a publish.</p>
+            <div class="tech"><span>n8n</span><span>Error Triggers</span></div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="skills" id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>Operations & HR</h3>
+            <div class="tech">
+                <span>Operations Management</span>
+                <span>Team Leadership</span>
+                <span>Recruitment & Onboarding</span>
+                <span>KPI Reporting</span>
+                <span>Process Improvement</span>
+                <span>Event Coordination</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Automation & AI</h3>
+            <div class="tech">
+                <span>n8n</span>
+                <span>Zoho</span>
+                <span>FFmpeg</span>
+                <span>Whisper AI</span>
+                <span>Playwright</span>
+                <span>ChatGPT / AI Tools</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Content & Design</h3>
+            <div class="tech">
+                <span>Canva</span>
+                <span>Adobe Photoshop</span>
+                <span>Adobe Illustrator</span>
+                <span>Premiere Pro</span>
+                <span>Local SEO</span>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools & Platforms</h3>
+            <div class="tech">
+                <span>Google Workspace</span>
+                <span>Microsoft Office</span>
+                <span>Telegram Bot API</span>
+                <span>YouTube API</span>
+                <span>TikTok</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h2>Let's Connect</h2>
+    <p class="section-sub">Open to operations, admin, and automation-focused roles — or a conversation about a workflow you'd like built.</p>
+
+    <div class="contact-cards">
+        <a class="contact-card" href="mailto:almamunn2001@gmail.com">
+            <h4>Email</h4>
+            <p>almamunn2001@gmail.com</p>
+        </a>
+        <a class="contact-card" href="tel:+8801721321530">
+            <h4>Phone</h4>
+            <p>+880 1721-321530</p>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/almamun0fficial" target="_blank" rel="noopener">
+            <h4>LinkedIn</h4>
+            <p>linkedin.com/in/almamun0fficial</p>
+        </a>
+        <div class="contact-card">
+            <h4>Location</h4>
+            <p>Dhaka, Bangladesh</p>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+</footer>
 
 <script src="script.js"></script>
 
