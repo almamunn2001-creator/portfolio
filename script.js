@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (navToggle && navList) {
         navToggle.addEventListener('click', function () {
-            navList.classList.toggle('open');
+            var open = navList.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
 
         navList.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
                 navList.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
