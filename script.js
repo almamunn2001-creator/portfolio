@@ -22,6 +22,44 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ----- Theme toggle -----
+    var root = document.documentElement;
+    var themeBtn = document.getElementById('themeToggle');
+
+    function syncThemeBtn() {
+        if (!themeBtn) return;
+        var dark = root.getAttribute('data-theme') === 'dark';
+        themeBtn.innerHTML = dark ? '&#9788;' : '&#9790;';
+        themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', function () {
+            var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+            syncThemeBtn();
+        });
+    }
+    syncThemeBtn();
+
+    // ----- Nav shadow + back-to-top -----
+    var nav = document.querySelector('nav');
+    var toTop = document.getElementById('toTop');
+
+    function onScrollUi() {
+        if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+        if (toTop) toTop.classList.toggle('show', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', onScrollUi, { passive: true });
+    onScrollUi();
+
+    if (toTop) {
+        toTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // ----- Active nav link on scroll -----
     var sections = document.querySelectorAll('section[id]');
     var navLinks = document.querySelectorAll('.nav-link');
@@ -43,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('scroll', setActiveLink, { passive: true });
     setActiveLink();
 
     // ----- Project filter -----
@@ -91,6 +129,38 @@ document.addEventListener('DOMContentLoaded', function () {
         revealTargets.forEach(function (el) { observer.observe(el); });
     } else {
         revealTargets.forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    // ----- Count-up stats -----
+    var counters = document.querySelectorAll('[data-count]');
+
+    function runCounter(el) {
+        var target = parseFloat(el.getAttribute('data-count'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1200;
+        var start = null;
+
+        function tick(ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (target * eased).toFixed(decimals) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        var counterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.6 });
+        counters.forEach(function (el) { counterObserver.observe(el); });
     }
 
 });

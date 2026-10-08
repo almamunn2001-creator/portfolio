@@ -6,6 +6,15 @@
     <title>Abdullah Al Mamun | Operations & AI Workflow Automation Engineer</title>
     <meta name="description" content="Abdullah Al Mamun - Operations & AI workflow automation professional in Dhaka, Bangladesh. HR coordination, content operations and n8n automation.">
     <meta name="theme-color" content="#4F46E5">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Abdullah Al Mamun | Operations & AI Workflow Automation Engineer">
     <meta property="og:description" content="I lead day-to-day operations for a 50+ person team and build automation systems that eliminate repetitive work.">
@@ -21,6 +30,8 @@
 
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <nav>
     <div class="logo">
         Mamun<span>Automation</span>
@@ -35,10 +46,15 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
+    <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
     </button>
+    </div>
 </nav>
+
+<main id="main">
 
 <section class="hero" id="home">
 
@@ -86,22 +102,22 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 <section class="stats">
 
 <div class="card">
-<h1>50+</h1>
+<h1 data-count="50" data-suffix="+">50+</h1>
 <p>Employees Coordinated</p>
 </div>
 
 <div class="card">
-<h1>30+</h1>
+<h1 data-count="30" data-suffix="+">30+</h1>
 <p>Hours Saved Weekly</p>
 </div>
 
 <div class="card">
-<h1>11</h1>
+<h1 data-count="11" data-suffix="">11</h1>
 <p>Automations Shipped</p>
 </div>
 
 <div class="card">
-<h1>4.5+</h1>
+<h1 data-count="4.5" data-suffix="+" data-decimals="1">4.5+</h1>
 <p>Years Experience</p>
 </div>
 
@@ -378,9 +394,13 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 </section>
 
+</main>
+
 <footer>
     <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
 </footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
 
 <script src="script.js"></script>
 
