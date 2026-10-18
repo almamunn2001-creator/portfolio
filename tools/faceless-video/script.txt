@@ -1,0 +1,10 @@
+# scene | line   (scenes: poor rich young old married single broken truth happy)
+poor    | The poor want money.
+rich    | The rich want peace.
+young   | The young want to grow up.
+old     | The old wish to be young again.
+married | The married long for freedom.
+single  | The single long for love.
+broken  | The broken wish to heal.
+truth   | The truth is, not everyone has everything.
+happy   | Be happy in what you have.
