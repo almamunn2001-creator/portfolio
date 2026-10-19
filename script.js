@@ -43,6 +43,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     syncThemeBtn();
 
+    // ----- Language toggle (bio + story pages) -----
+    var langBtn = document.getElementById('langToggle');
+
+    function syncLangBtn() {
+        if (!langBtn) return;
+        var bn = root.getAttribute('data-lang') === 'bn';
+        langBtn.textContent = bn ? 'EN' : 'বাং';
+        langBtn.setAttribute('aria-label', bn ? 'View in English' : 'বাংলায় দেখুন');
+    }
+
+    if (langBtn) {
+        langBtn.addEventListener('click', function () {
+            var next = root.getAttribute('data-lang') === 'bn' ? 'en' : 'bn';
+            root.setAttribute('data-lang', next);
+            root.setAttribute('lang', next);
+            try { localStorage.setItem('lang', next); } catch (e) {}
+            syncLangBtn();
+        });
+    }
+    syncLangBtn();
+
     // ----- Nav shadow + back-to-top -----
     var nav = document.querySelector('nav');
     var toTop = document.getElementById('toTop');
@@ -171,10 +192,12 @@ document.querySelectorAll('.copy-btn').forEach(function (btn) {
         var target = document.getElementById(btn.getAttribute('data-copy'));
         if (!target) return;
         var text = target.textContent.trim();
+        var label = btn.getAttribute('data-label') || btn.textContent;
+        btn.setAttribute('data-label', label);
 
         function done(ok) {
-            btn.textContent = ok ? 'Copied!' : 'Press Ctrl+C';
-            setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+            btn.textContent = ok ? (btn.getAttribute('data-done') || 'Copied!') : 'Ctrl+C';
+            setTimeout(function () { btn.textContent = label; }, 1800);
         }
 
         if (navigator.clipboard && window.isSecureContext) {
