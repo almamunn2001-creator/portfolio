@@ -53,16 +53,38 @@ document.addEventListener('DOMContentLoaded', function () {
         langBtn.setAttribute('aria-label', bn ? 'View in English' : 'বাংলায় দেখুন');
     }
 
+    var titleEn = document.title;
+    var titleBnMeta = document.querySelector('meta[name="title-bn"]');
+
+    function isBn() { return root.getAttribute('data-lang') === 'bn'; }
+
+    function localDigits(str) {
+        if (!isBn()) return String(str);
+        return String(str).replace(/[0-9]/g, function (d) { return '০১২৩৪৫৬৭৮৯'[d]; });
+    }
+
+    function applyLang() {
+        syncLangBtn();
+        if (titleBnMeta) document.title = isBn() ? titleBnMeta.getAttribute('content') : titleEn;
+        document.querySelectorAll('[data-count]').forEach(function (el) {
+            if (el.getAttribute('data-counting') === '1') return;
+            var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+            el.textContent = localDigits(parseFloat(el.getAttribute('data-count')).toFixed(decimals) + (el.getAttribute('data-suffix') || ''));
+        });
+        var yr = document.getElementById('year');
+        if (yr) yr.textContent = localDigits(new Date().getFullYear());
+    }
+
     if (langBtn) {
         langBtn.addEventListener('click', function () {
-            var next = root.getAttribute('data-lang') === 'bn' ? 'en' : 'bn';
+            var next = isBn() ? 'en' : 'bn';
             root.setAttribute('data-lang', next);
             root.setAttribute('lang', next);
             try { localStorage.setItem('lang', next); } catch (e) {}
-            syncLangBtn();
+            applyLang();
         });
     }
-    syncLangBtn();
+    applyLang();
 
     // ----- Nav shadow + back-to-top -----
     var nav = document.querySelector('nav');
@@ -162,12 +184,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var duration = 1200;
         var start = null;
 
+        el.setAttribute('data-counting', '1');
+
         function tick(ts) {
             if (start === null) start = ts;
             var p = Math.min((ts - start) / duration, 1);
             var eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = (target * eased).toFixed(decimals) + suffix;
+            el.textContent = localDigits((target * eased).toFixed(decimals) + suffix);
             if (p < 1) requestAnimationFrame(tick);
+            else el.removeAttribute('data-counting');
         }
         requestAnimationFrame(tick);
     }
