@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair task assignment with a round-robin workflow | Abdullah Al Mamun</title>
+    <meta name="description" content="How a round-robin n8n workflow assigns scripts to editors automatically and emails each one their task.">
+    <meta name="theme-color" content="#4F46E5">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Fair task assignment with a round-robin workflow">
+    <meta property="og:description" content="How a round-robin n8n workflow assigns scripts to editors automatically and emails each one their task.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234F46E5'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+    <a class="logo" href="../index.html">
+        Mamun<span>Automation</span>
+    </a>
+
+    <ul id="navMenu">
+        <li><a href="../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+    </button>
+    </div>
+</nav>
+
+<main id="main">
+
+<article class="post">
+
+    <a class="back-link" href="../blog.html">&larr; All posts</a>
+
+    <header class="post-header">
+        <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 4 min read</span>
+        <h1>Fair task assignment with a round-robin workflow</h1>
+        <div class="tech"><span>n8n</span><span>Google Sheets</span><span>Gmail</span></div>
+    </header>
+
+    <div class="post-body">
+        <p>In a content team, scripts come in all day and need to reach an editor quickly. Deciding by hand who gets what is slower than it sounds — and over time it can start to feel uneven, with some editors getting more work than others.</p>
+
+        <p>I built the <strong>Editor Distribution System</strong> to take that decision off my plate and make it fair by design.</p>
+
+        <h2>Why round-robin?</h2>
+        <p>Round-robin is the simplest fair system there is: tasks go to each person in turn, then the cycle starts again. Nobody has to remember who's next, and everyone gets an even share.</p>
+
+        <h2>How it works</h2>
+        <ol>
+            <li><strong>New scripts land in a Google Sheet</strong> that acts as the queue.</li>
+            <li><strong>n8n picks up each new script</strong> and checks who received the last assignment.</li>
+            <li><strong>It assigns the script to the next editor</strong> in the rotation and records the assignment back in the sheet.</li>
+            <li><strong>Each editor gets an email</strong> with their new task, so nothing depends on them checking a sheet.</li>
+        </ol>
+
+        <h2>What made it work</h2>
+        <ul>
+            <li><strong>One source of truth.</strong> The sheet records every assignment, so it's easy to see who has what.</li>
+            <li><strong>Notifications, not lookups.</strong> Emailing editors directly means work starts sooner.</li>
+            <li><strong>Simple rules.</strong> A rotation everyone understands is easier to trust than a clever one nobody can explain.</li>
+        </ul>
+
+        <h2>The takeaway</h2>
+        <p>Not every automation needs AI. Sometimes the biggest win is taking a small, repeated decision and making it automatic, consistent, and fair.</p>
+    </div>
+
+    <div class="post-footer">
+        <p>Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
+        <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+    </div>
+
+</article>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
+
+<script src="../script.js"></script>
+
+</body>
+</html>

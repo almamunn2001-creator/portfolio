@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I automated the daily work summary for our CEO | Abdullah Al Mamun</title>
+    <meta name="description" content="How an n8n workflow turns 50+ employees’ daily work logs into one HTML summary email for leadership, automatically.">
+    <meta name="theme-color" content="#4F46E5">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How I automated the daily work summary for our CEO">
+    <meta property="og:description" content="How an n8n workflow turns 50+ employees’ daily work logs into one HTML summary email for leadership, automatically.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234F46E5'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav>
+    <a class="logo" href="../index.html">
+        Mamun<span>Automation</span>
+    </a>
+
+    <ul id="navMenu">
+        <li><a href="../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+    </button>
+    </div>
+</nav>
+
+<main id="main">
+
+<article class="post">
+
+    <a class="back-link" href="../blog.html">&larr; All posts</a>
+
+    <header class="post-header">
+        <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 5 min read</span>
+        <h1>How I automated the daily work summary for our CEO</h1>
+        <div class="tech"><span>n8n</span><span>Google Sheets</span><span>HTML Mail</span></div>
+    </header>
+
+    <div class="post-body">
+        <p>As Administrative Coordinator for a 50+ person team, one of my recurring jobs was answering a simple question from leadership: <em>what did everyone get done today?</em> The answer lived in dozens of individual work logs. Pulling it together by hand every evening was slow, repetitive, and easy to get wrong.</p>
+
+        <p>So I automated it. Now, at the end of each day, the CEO gets one clean email that summarises the whole team's work — and nobody has to compile it.</p>
+
+        <h2>The problem</h2>
+        <ul>
+            <li>Every employee logs their daily work in Google Sheets.</li>
+            <li>Leadership wanted a single, readable daily overview — not 50 separate sheets.</li>
+            <li>Compiling it manually took time every single day and depended on someone remembering to do it.</li>
+        </ul>
+
+        <h2>How the workflow works</h2>
+        <p>The whole thing runs in <strong>n8n</strong>. At a high level it has four steps:</p>
+        <ol>
+            <li><strong>Schedule trigger</strong> — fires at the end of the working day.</li>
+            <li><strong>Read the work logs</strong> — pulls today's entries from Google Sheets.</li>
+            <li><strong>Build the summary</strong> — groups entries by person and formats them into an HTML report.</li>
+            <li><strong>Send the email</strong> — delivers the finished report straight to the CEO's inbox.</li>
+        </ol>
+
+        <blockquote>The goal wasn't just speed. It was making sure the report arrives every day, on time, whether or not anyone is at their desk.</blockquote>
+
+        <h2>What I learned</h2>
+        <ul>
+            <li><strong>Consistent input matters most.</strong> Automation is only as good as the data going into it, so keeping everyone's log format the same was the real foundation.</li>
+            <li><strong>Format for the reader.</strong> An HTML email that's easy to scan gets read; a raw data dump doesn't.</li>
+            <li><strong>Plan for failure.</strong> I pair workflows like this with a reliability monitor so I know immediately if a run fails.</li>
+        </ul>
+
+        <h2>The result</h2>
+        <p>A daily task that used to depend on manual effort now happens on its own. Leadership gets a consistent view of the team's output, and I get that time back for work that actually needs a person.</p>
+    </div>
+
+    <div class="post-footer">
+        <p>Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
+        <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+    </div>
+
+</article>
+
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
+
+<script src="../script.js"></script>
+
+</body>
+</html>
