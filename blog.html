@@ -4,47 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Abdullah Al Mamun</title>
+    <meta name="title-bn" content="ব্লগ | আব্দুল্লাহ আল মামুন">
     <meta name="description" content="Notes on operations, HR administration and AI workflow automation with n8n, by Abdullah Al Mamun.">
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog | Abdullah Al Mamun">
+    <meta property="og:description" content="Notes on operations, HR administration and AI workflow automation with n8n, by Abdullah Al Mamun.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234F46E5'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <a class="logo" href="index.html">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </a>
 
     <ul id="navMenu">
-        <li><a href="index.html#home" class="nav-link">Home</a></li>
-        <li><a href="bio.html" class="nav-link">Bio</a></li>
-        <li><a href="story.html" class="nav-link">My Story</a></li>
-        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
-        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
-        <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="index.html#home" class="nav-link"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="bio.html" class="nav-link"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="story.html" class="nav-link"><span data-lang="en">My Story</span><span data-lang="bn">আমার গল্প</span></a></li>
+        <li><a href="index.html#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="index.html#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="index.html#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="blog.html" class="nav-link active" aria-current="page"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="index.html#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -56,25 +66,26 @@
 
 <section class="blog">
 
-    <h2>Blog</h2>
-    <p class="section-sub">Notes on running operations, HR administration, and the automations I build to make the work lighter.</p>
+    <h2><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></h2>
+    <p class="section-sub"><span data-lang="en">Notes on running operations, HR administration, and the automations I build to make the work lighter.</span><span data-lang="bn">অপারেশনস পরিচালনা, এইচআর প্রশাসন, আর কাজ সহজ করতে আমার তৈরি অটোমেশন নিয়ে লেখা।</span></p>
 
     <div class="post-list">
 
         <!-- Newest post first. Copy one <a class="post-card"> block per post. -->
 
         <a class="post-card" href="blog/daily-ceo-report-automation.html">
-            <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 5 min read</span>
-            <h3>How I automated the daily work summary for our CEO</h3>
-            <p>Every evening, 50+ people's work logs become one clean HTML email for leadership — with zero copy-pasting. Here's how the n8n workflow is put together.</p>
-            <div class="tech"><span>n8n</span><span>Google Sheets</span><span>Automation</span></div>
+            <span class="post-meta"><span data-lang="en">Oct 2026 &nbsp;·&nbsp; 5 min read</span><span data-lang="bn">অক্টোবর ২০২৬ &nbsp;·&nbsp; ৫ মিনিটে পড়ুন</span></span>
+            <h3><span data-lang="en">How I automated the daily work summary for our CEO</span><span data-lang="bn">যেভাবে সিইওর জন্য দৈনিক কাজের সারাংশ অটোমেট করেছি</span></h3>
+            <p data-lang="en">Every evening, 50+ people's work logs become one clean HTML email for leadership — with zero copy-pasting. Here's how the n8n workflow is put together.</p>
+            <p data-lang="bn">প্রতি সন্ধ্যায় ৫০ জনেরও বেশি মানুষের কাজের লগ একটি গোছানো HTML ইমেইলে পরিণত হয়, কোনো কপি-পেস্ট ছাড়াই। n8n ওয়ার্কফ্লোটি কীভাবে তৈরি, তা এখানে।</p>
+            <div class="tech"><span>n8n</span><span>Google Sheets</span><span><span data-lang="en">Automation</span><span data-lang="bn">অটোমেশন</span></span></div>
         </a>
-
         <a class="post-card" href="blog/round-robin-editor-distribution.html">
-            <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 4 min read</span>
-            <h3>Fair task assignment with a round-robin workflow</h3>
-            <p>Manually deciding which editor gets which script was slow and felt uneven. A simple round-robin system in n8n fixed both problems.</p>
-            <div class="tech"><span>n8n</span><span>Gmail</span><span>Operations</span></div>
+            <span class="post-meta"><span data-lang="en">Oct 2026 &nbsp;·&nbsp; 4 min read</span><span data-lang="bn">অক্টোবর ২০২৬ &nbsp;·&nbsp; ৪ মিনিটে পড়ুন</span></span>
+            <h3><span data-lang="en">Fair task assignment with a round-robin workflow</span><span data-lang="bn">রাউন্ড-রবিন ওয়ার্কফ্লো দিয়ে ন্যায্যভাবে কাজ ভাগ</span></h3>
+            <p data-lang="en">Manually deciding which editor gets which script was slow and felt uneven. A simple round-robin system in n8n fixed both problems.</p>
+            <p data-lang="bn">কোন এডিটর কোন স্ক্রিপ্ট পাবেন, হাতে করে ঠিক করা ছিল ধীর আর অসম। n8n-এ একটি সহজ রাউন্ড-রবিন সিস্টেম দুটো সমস্যারই সমাধান করেছে।</p>
+            <div class="tech"><span>n8n</span><span>Gmail</span><span><span data-lang="en">Operations</span><span data-lang="bn">অপারেশনস</span></span></div>
         </a>
 
     </div>
@@ -84,7 +95,7 @@
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>

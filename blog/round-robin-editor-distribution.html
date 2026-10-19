@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fair task assignment with a round-robin workflow | Abdullah Al Mamun</title>
+    <meta name="title-bn" content="রাউন্ড-রবিন ওয়ার্কফ্লো দিয়ে ন্যায্যভাবে কাজ ভাগ | আব্দুল্লাহ আল মামুন">
     <meta name="description" content="How a round-robin n8n workflow assigns scripts to editors automatically and emails each one their task.">
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Fair task assignment with a round-robin workflow">
+    <meta property="og:title" content="Fair task assignment with a round-robin workflow | Abdullah Al Mamun">
     <meta property="og:description" content="How a round-robin n8n workflow assigns scripts to editors automatically and emails each one their task.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234F46E5'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,30 +30,31 @@
 
     <link rel="stylesheet" href="../style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <a class="logo" href="../index.html">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </a>
 
     <ul id="navMenu">
-        <li><a href="../index.html#home" class="nav-link">Home</a></li>
-        <li><a href="../bio.html" class="nav-link">Bio</a></li>
-        <li><a href="../story.html" class="nav-link">My Story</a></li>
-        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
-        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
-        <li><a href="../blog.html" class="nav-link active">Blog</a></li>
-        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="../index.html#home" class="nav-link"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="../bio.html" class="nav-link"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="../story.html" class="nav-link"><span data-lang="en">My Story</span><span data-lang="bn">আমার গল্প</span></a></li>
+        <li><a href="../index.html#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="../index.html#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="../index.html#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="../blog.html" class="nav-link active"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="../index.html#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -59,15 +66,15 @@
 
 <article class="post">
 
-    <a class="back-link" href="../blog.html">&larr; All posts</a>
+    <a class="back-link" href="../blog.html"><span data-lang="en">&larr; All posts</span><span data-lang="bn">&larr; সব লেখা</span></a>
 
     <header class="post-header">
-        <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 4 min read</span>
-        <h1>Fair task assignment with a round-robin workflow</h1>
+        <span class="post-meta"><span data-lang="en">Oct 2026 &nbsp;·&nbsp; 4 min read</span><span data-lang="bn">অক্টোবর ২০২৬ &nbsp;·&nbsp; ৪ মিনিটে পড়ুন</span></span>
+        <h1><span data-lang="en">Fair task assignment with a round-robin workflow</span><span data-lang="bn">রাউন্ড-রবিন ওয়ার্কফ্লো দিয়ে ন্যায্যভাবে কাজ ভাগ</span></h1>
         <div class="tech"><span>n8n</span><span>Google Sheets</span><span>Gmail</span></div>
     </header>
 
-    <div class="post-body">
+    <div class="post-body" data-lang="en">
         <p>In a content team, scripts come in all day and need to reach an editor quickly. Deciding by hand who gets what is slower than it sounds — and over time it can start to feel uneven, with some editors getting more work than others.</p>
 
         <p>I built the <strong>Editor Distribution System</strong> to take that decision off my plate and make it fair by design.</p>
@@ -94,9 +101,37 @@
         <p>Not every automation needs AI. Sometimes the biggest win is taking a small, repeated decision and making it automatic, consistent, and fair.</p>
     </div>
 
+    <div class="post-body" data-lang="bn">
+        <p>একটি কনটেন্ট টিমে সারাদিন স্ক্রিপ্ট আসতে থাকে, আর দ্রুত সেগুলো এডিটরের কাছে পৌঁছানো দরকার। কে কোনটা পাবেন, হাতে করে ঠিক করা যতটা মনে হয় তার চেয়ে ধীর, আর সময়ের সঙ্গে সেটা অসম মনে হতে শুরু করে: কেউ বেশি কাজ পান, কেউ কম।</p>
+
+        <p>সেই সিদ্ধান্তের ভার নিজের কাঁধ থেকে নামাতে এবং ব্যবস্থাটাকেই ন্যায্য করতে আমি <strong>এডিটর ডিস্ট্রিবিউশন সিস্টেম</strong> তৈরি করি।</p>
+
+        <h2>কেন রাউন্ড-রবিন?</h2>
+        <p>রাউন্ড-রবিন হলো সবচেয়ে সহজ ন্যায্য পদ্ধতি: কাজগুলো পালাক্রমে একেকজনের কাছে যায়, তারপর আবার শুরু থেকে। পরের জন কে, তা কাউকে মনে রাখতে হয় না, আর সবাই সমান ভাগ পান।</p>
+
+        <h2>যেভাবে কাজ করে</h2>
+        <ol>
+            <li><strong>নতুন স্ক্রিপ্ট একটি Google Sheet-এ জমা হয়</strong>, যা কিউ হিসেবে কাজ করে।</li>
+            <li><strong>n8n প্রতিটি নতুন স্ক্রিপ্ট ধরে</strong> এবং দেখে শেষ কাজটি কে পেয়েছিলেন।</li>
+            <li><strong>পালাক্রমে পরের এডিটরকে স্ক্রিপ্টটি দেয়</strong> এবং শিটে সেটা লিখে রাখে।</li>
+            <li><strong>প্রত্যেক এডিটর ইমেইলে তার নতুন কাজ পান</strong>, তাই শিট চেক করার ওপর কিছুই নির্ভর করে না।</li>
+        </ol>
+
+        <h2>যে কারণে সফল হয়েছে</h2>
+        <ul>
+            <li><strong>তথ্যের একটিই উৎস।</strong> শিটে প্রতিটি কাজের হিসাব থাকে, তাই কার কাছে কী আছে তা সহজেই দেখা যায়।</li>
+            <li><strong>খোঁজ নয়, নোটিফিকেশন।</strong> সরাসরি ইমেইল পাঠানোয় কাজ আগেই শুরু হয়।</li>
+            <li><strong>সহজ নিয়ম।</strong> সবাই বোঝে এমন একটি পালাক্রম, কেউ ব্যাখ্যা করতে পারে না এমন জটিল নিয়মের চেয়ে বেশি বিশ্বাসযোগ্য।</li>
+        </ul>
+
+        <h2>শিক্ষা</h2>
+        <p>সব অটোমেশনে এআই লাগে না। কখনো সবচেয়ে বড় লাভ হলো ছোট, বারবার নেওয়া একটি সিদ্ধান্তকে স্বয়ংক্রিয়, নিয়মিত আর ন্যায্য করে তোলা।</p>
+    </div>
+
     <div class="post-footer">
-        <p>Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
-        <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+        <p data-lang="en">Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
+        <p data-lang="bn">আপনার টিমের জন্যও এমন ওয়ার্কফ্লো চান? <a href="../index.html#contact">যোগাযোগ করুন</a>।</p>
+        <a class="back-link" href="../blog.html"><span data-lang="en">&larr; Back to all posts</span><span data-lang="bn">&larr; সব লেখায় ফিরুন</span></a>
     </div>
 
 </article>
@@ -104,7 +139,7 @@
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>

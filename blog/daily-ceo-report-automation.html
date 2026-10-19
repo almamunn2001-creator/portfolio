@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How I automated the daily work summary for our CEO | Abdullah Al Mamun</title>
+    <meta name="title-bn" content="যেভাবে সিইওর জন্য দৈনিক কাজের সারাংশ অটোমেট করেছি | আব্দুল্লাহ আল মামুন">
     <meta name="description" content="How an n8n workflow turns 50+ employees’ daily work logs into one HTML summary email for leadership, automatically.">
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
     <meta property="og:type" content="article">
-    <meta property="og:title" content="How I automated the daily work summary for our CEO">
+    <meta property="og:title" content="How I automated the daily work summary for our CEO | Abdullah Al Mamun">
     <meta property="og:description" content="How an n8n workflow turns 50+ employees’ daily work logs into one HTML summary email for leadership, automatically.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234F46E5'/><text x='50' y='68' font-size='56' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'>M</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,30 +30,31 @@
 
     <link rel="stylesheet" href="../style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <a class="logo" href="../index.html">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </a>
 
     <ul id="navMenu">
-        <li><a href="../index.html#home" class="nav-link">Home</a></li>
-        <li><a href="../bio.html" class="nav-link">Bio</a></li>
-        <li><a href="../story.html" class="nav-link">My Story</a></li>
-        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
-        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
-        <li><a href="../blog.html" class="nav-link active">Blog</a></li>
-        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="../index.html#home" class="nav-link"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="../bio.html" class="nav-link"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="../story.html" class="nav-link"><span data-lang="en">My Story</span><span data-lang="bn">আমার গল্প</span></a></li>
+        <li><a href="../index.html#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="../index.html#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="../index.html#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="../blog.html" class="nav-link active"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="../index.html#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -59,15 +66,15 @@
 
 <article class="post">
 
-    <a class="back-link" href="../blog.html">&larr; All posts</a>
+    <a class="back-link" href="../blog.html"><span data-lang="en">&larr; All posts</span><span data-lang="bn">&larr; সব লেখা</span></a>
 
     <header class="post-header">
-        <span class="post-meta">Oct 2026 &nbsp;·&nbsp; 5 min read</span>
-        <h1>How I automated the daily work summary for our CEO</h1>
+        <span class="post-meta"><span data-lang="en">Oct 2026 &nbsp;·&nbsp; 5 min read</span><span data-lang="bn">অক্টোবর ২০২৬ &nbsp;·&nbsp; ৫ মিনিটে পড়ুন</span></span>
+        <h1><span data-lang="en">How I automated the daily work summary for our CEO</span><span data-lang="bn">যেভাবে সিইওর জন্য দৈনিক কাজের সারাংশ অটোমেট করেছি</span></h1>
         <div class="tech"><span>n8n</span><span>Google Sheets</span><span>HTML Mail</span></div>
     </header>
 
-    <div class="post-body">
+    <div class="post-body" data-lang="en">
         <p>As Administrative Coordinator for a 50+ person team, one of my recurring jobs was answering a simple question from leadership: <em>what did everyone get done today?</em> The answer lived in dozens of individual work logs. Pulling it together by hand every evening was slow, repetitive, and easy to get wrong.</p>
 
         <p>So I automated it. Now, at the end of each day, the CEO gets one clean email that summarises the whole team's work — and nobody has to compile it.</p>
@@ -101,9 +108,44 @@
         <p>A daily task that used to depend on manual effort now happens on its own. Leadership gets a consistent view of the team's output, and I get that time back for work that actually needs a person.</p>
     </div>
 
+    <div class="post-body" data-lang="bn">
+        <p>৫০ জনেরও বেশি সদস্যের টিমের অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর হিসেবে আমার নিয়মিত একটি কাজ ছিল ঊর্ধ্বতন ব্যবস্থাপনার একটি সহজ প্রশ্নের উত্তর দেওয়া: <em>আজ সবাই কী কী কাজ করেছে?</em> উত্তরটা ছড়িয়ে থাকত ডজনখানেক আলাদা কাজের লগে। প্রতি সন্ধ্যায় হাতে হাতে সেগুলো একসঙ্গে করা ছিল সময়সাপেক্ষ, একঘেয়ে, আর ভুল হওয়ার ঝুঁকিও ছিল।</p>
+
+        <p>তাই কাজটা অটোমেট করলাম। এখন প্রতিদিন শেষে সিইও একটি গোছানো ইমেইল পান, যেখানে পুরো টিমের কাজের সারাংশ থাকে, আর কাউকে সেটা বানাতে হয় না।</p>
+
+        <h2>সমস্যাটা কী ছিল</h2>
+        <ul>
+            <li>প্রত্যেক কর্মী তার দৈনিক কাজ Google Sheets-এ লেখেন।</li>
+            <li>ঊর্ধ্বতন ব্যবস্থাপনা চাইতেন একটি সহজে পড়া যায় এমন দৈনিক সারসংক্ষেপ, ৫০টি আলাদা শিট নয়।</li>
+            <li>হাতে করে বানাতে প্রতিদিন সময় লাগত, আর কেউ মনে রাখবেন কি না তার ওপর নির্ভর করত।</li>
+        </ul>
+
+        <h2>ওয়ার্কফ্লোটি যেভাবে কাজ করে</h2>
+        <p>পুরো ব্যবস্থাটি চলে <strong>n8n</strong>-এ। মোটা দাগে এর চারটি ধাপ:</p>
+        <ol>
+            <li><strong>শিডিউল ট্রিগার</strong>: কর্মদিবসের শেষে চালু হয়।</li>
+            <li><strong>কাজের লগ পড়া</strong>: Google Sheets থেকে আজকের এন্ট্রিগুলো নিয়ে আসে।</li>
+            <li><strong>সারাংশ তৈরি</strong>: ব্যক্তি অনুযায়ী এন্ট্রিগুলো সাজিয়ে একটি HTML রিপোর্ট বানায়।</li>
+            <li><strong>ইমেইল পাঠানো</strong>: তৈরি রিপোর্টটি সরাসরি সিইওর ইনবক্সে পাঠিয়ে দেয়।</li>
+        </ol>
+
+        <blockquote>লক্ষ্য শুধু দ্রুততা ছিল না। লক্ষ্য ছিল, কেউ ডেস্কে থাকুক বা না থাকুক, রিপোর্টটি যেন প্রতিদিন সময়মতো পৌঁছায়।</blockquote>
+
+        <h2>যা শিখেছি</h2>
+        <ul>
+            <li><strong>একই ধরনের ইনপুট সবচেয়ে জরুরি।</strong> অটোমেশন ততটাই ভালো, যতটা ভালো এর ডেটা। তাই সবার লগের ফরম্যাট একই রাখাই ছিল আসল ভিত্তি।</li>
+            <li><strong>পাঠকের কথা ভেবে সাজান।</strong> সহজে চোখ বোলানো যায় এমন HTML ইমেইল মানুষ পড়ে; কাঁচা ডেটার স্তূপ পড়ে না।</li>
+            <li><strong>ব্যর্থতার জন্য প্রস্তুত থাকুন।</strong> এমন ওয়ার্কফ্লোর সঙ্গে আমি একটি রিলায়েবিলিটি মনিটর রাখি, যাতে কোনো রান ব্যর্থ হলে সঙ্গে সঙ্গে জানতে পারি।</li>
+        </ul>
+
+        <h2>ফলাফল</h2>
+        <p>যে দৈনিক কাজটা আগে হাতের পরিশ্রমের ওপর নির্ভর করত, এখন তা নিজে থেকেই হয়। ঊর্ধ্বতন ব্যবস্থাপনা টিমের কাজের একটি নিয়মিত চিত্র পান, আর আমি সেই সময়টা এমন কাজে দিতে পারি যেখানে সত্যিই মানুষের প্রয়োজন।</p>
+    </div>
+
     <div class="post-footer">
-        <p>Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
-        <a class="back-link" href="../blog.html">&larr; Back to all posts</a>
+        <p data-lang="en">Want a workflow like this for your team? <a href="../index.html#contact">Get in touch</a>.</p>
+        <p data-lang="bn">আপনার টিমের জন্যও এমন ওয়ার্কফ্লো চান? <a href="../index.html#contact">যোগাযোগ করুন</a>।</p>
+        <a class="back-link" href="../blog.html"><span data-lang="en">&larr; Back to all posts</span><span data-lang="bn">&larr; সব লেখায় ফিরুন</span></a>
     </div>
 
 </article>
@@ -111,7 +153,7 @@
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>

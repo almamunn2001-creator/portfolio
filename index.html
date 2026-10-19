@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah Al Mamun | Operations & AI Workflow Automation Engineer</title>
+    <meta name="title-bn" content="আব্দুল্লাহ আল মামুন | অপারেশনস ও এআই ওয়ার্কফ্লো অটোমেশন">
     <meta name="description" content="Abdullah Al Mamun - Operations & AI workflow automation professional in Dhaka, Bangladesh. HR coordination, content operations and n8n automation.">
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
     <meta property="og:type" content="website">
@@ -25,30 +31,31 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <div class="logo">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </div>
 
     <ul id="navMenu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="bio.html" class="nav-link">Bio</a></li>
-        <li><a href="story.html" class="nav-link">My Story</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#home" class="nav-link active"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="bio.html" class="nav-link"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="story.html" class="nav-link"><span data-lang="en">My Story</span><span data-lang="bn">আমার গল্প</span></a></li>
+        <li><a href="#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="blog.html" class="nav-link"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -62,23 +69,26 @@
 
 <div class="hero-left">
 
-<h3>Operations & Automation Professional</h3>
+<h3><span data-lang="en">Operations &amp; Automation Professional</span><span data-lang="bn">অপারেশনস ও অটোমেশন পেশাজীবী</span></h3>
 
 <h1>
-Abdullah <span>Al Mamun</span>
+<span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
 </h1>
 
 <h2>
-Operations & AI Workflow Automation Engineer
+<span data-lang="en">Operations &amp; AI Workflow Automation Engineer</span><span data-lang="bn">অপারেশনস ও এআই ওয়ার্কফ্লো অটোমেশন ইঞ্জিনিয়ার</span>
 </h2>
 
-<p>
+<p data-lang="en">
 I lead day-to-day operations for a 50+ person team and build automation systems that eliminate repetitive work — HR coordination, content operations, and publishing pipelines — using AI, n8n, Google Workspace and Zoho.
+</p>
+<p data-lang="bn">
+আমি ৫০ জনেরও বেশি সদস্যের একটি টিমের দৈনন্দিন কার্যক্রম পরিচালনা করি, আর AI, n8n, Google Workspace ও Zoho দিয়ে এমন অটোমেশন তৈরি করি যা একঘেয়ে, বারবার করা কাজ দূর করে: এইচআর সমন্বয়, কনটেন্ট অপারেশনস এবং পাবলিশিং পাইপলাইন।
 </p>
 
 <div class="buttons">
-<a href="#projects" class="primary">View My Projects</a>
-<a href="assets/Abdullah-Al-Mamun-CV.pdf" class="secondary" download>Download CV</a>
+<a href="#projects" class="primary"><span data-lang="en">View My Projects</span><span data-lang="bn">আমার প্রজেক্ট দেখুন</span></a>
+<a href="assets/Abdullah-Al-Mamun-CV.pdf" class="secondary" download><span data-lang="en">Download CV</span><span data-lang="bn">সিভি ডাউনলোড</span></a>
 </div>
 
 <div class="hero-quick-links">
@@ -86,7 +96,7 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
     <span class="dot">•</span>
     <a href="https://linkedin.com/in/almamun0fficial" target="_blank" rel="noopener">LinkedIn</a>
     <span class="dot">•</span>
-    <span>Dhaka, Bangladesh</span>
+    <span><span data-lang="en">Dhaka, Bangladesh</span><span data-lang="bn">ঢাকা, বাংলাদেশ</span></span>
 </div>
 
 </div>
@@ -105,70 +115,86 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 <div class="card">
 <h1 data-count="50" data-suffix="+">50+</h1>
-<p>Employees Coordinated</p>
+<p><span data-lang="en">Employees Coordinated</span><span data-lang="bn">কর্মী সমন্বয়</span></p>
 </div>
 
 <div class="card">
 <h1 data-count="30" data-suffix="+">30+</h1>
-<p>Hours Saved Weekly</p>
+<p><span data-lang="en">Hours Saved Weekly</span><span data-lang="bn">ঘণ্টা সাশ্রয় প্রতি সপ্তাহে</span></p>
 </div>
 
 <div class="card">
 <h1 data-count="11" data-suffix="">11</h1>
-<p>Automations Shipped</p>
+<p><span data-lang="en">Automations Shipped</span><span data-lang="bn">অটোমেশন চালু</span></p>
 </div>
 
 <div class="card">
 <h1 data-count="4.5" data-suffix="+" data-decimals="1">4.5+</h1>
-<p>Years Experience</p>
+<p><span data-lang="en">Years Experience</span><span data-lang="bn">বছরের অভিজ্ঞতা</span></p>
 </div>
 
 </section>
 
 <section class="about" id="about">
 
-    <h2>About Me</h2>
+    <h2><span data-lang="en">About Me</span><span data-lang="bn">আমার সম্পর্কে</span></h2>
 
     <div class="about-grid">
 
         <div class="about-text">
-            <p>
+            <p data-lang="en">
                 I'm an Administrative Coordinator currently leading daily operations for a 50+ member media
                 organization — overseeing team coordination, HR administration, reporting, and cross-functional
                 workflow between editorial, marketing, design, and administration.
             </p>
-            <p>
+            <p data-lang="bn">
+                আমি একজন অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর। বর্তমানে ৫০ জনেরও বেশি সদস্যের একটি মিডিয়া প্রতিষ্ঠানের
+                দৈনন্দিন কার্যক্রম পরিচালনা করছি: টিম সমন্বয়, এইচআর প্রশাসন, রিপোর্টিং, এবং সম্পাদকীয়, মার্কেটিং,
+                ডিজাইন ও প্রশাসন বিভাগের মধ্যে কাজের সমন্বয়।
+            </p>
+            <p data-lang="en">
                 I've been promoted three times in three years within the same organization
                 (Jr. Graphic Designer → Social Media Manager → HR &amp; Admin → Administrative Coordinator), and
                 along the way I started building automation systems to solve the repetitive parts of my own job —
                 that grew into a full toolkit of HR, content, and publishing automations now running in production.
             </p>
-            <p>
-                I'm currently pursuing an Executive MBA in Marketing Management at Presidency University,
+            <p data-lang="bn">
+                একই প্রতিষ্ঠানে তিন বছরে তিনবার পদোন্নতি পেয়েছি (জুনিয়র গ্রাফিক ডিজাইনার → সোশ্যাল মিডিয়া
+                ম্যানেজার → এইচআর ও অ্যাডমিন → অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর)। এই পথে নিজের কাজের একঘেয়ে
+                অংশগুলো সহজ করতে অটোমেশন তৈরি শুরু করি, যা এখন এইচআর, কনটেন্ট ও পাবলিশিংয়ের একটি পূর্ণাঙ্গ
+                অটোমেশন টুলকিটে পরিণত হয়েছে এবং নিয়মিত চলছে।
+            </p>
+            <p data-lang="en">
+                I'm currently pursuing an MBA in Management Information Systems (MIS) at Presidency University,
                 Bangladesh, focused on sharpening my ability to lead digital transformation and technology strategy.
             </p>
+            <p data-lang="bn">
+                বর্তমানে প্রেসিডেন্সি ইউনিভার্সিটিতে ম্যানেজমেন্ট ইনফরমেশন সিস্টেমসে (MIS) এমবিএ করছি, যাতে ডিজিটাল
+                রূপান্তর ও প্রযুক্তি কৌশলে নেতৃত্ব দেওয়ার দক্ষতা আরও বাড়াতে পারি।
+            </p>
             <p class="read-more-links">
-                <a class="read-more" href="story.html">Read my life story &rarr;</a>
-                <a class="read-more" href="bio.html">Professional bio &rarr;</a>
+                <a class="read-more" href="story.html"><span data-lang="en">Read my life story &rarr;</span><span data-lang="bn">আমার জীবনের গল্প পড়ুন &rarr;</span></a>
+                <a class="read-more" href="bio.html"><span data-lang="en">Professional bio &rarr;</span><span data-lang="bn">পেশাগত পরিচিতি &rarr;</span></a>
             </p>
         </div>
 
         <div class="about-facts">
             <div class="fact">
-                <h4>Role</h4>
-                <p>Administrative Coordinator, Gcontent</p>
+                <h4><span data-lang="en">Role</span><span data-lang="bn">পদ</span></h4>
+                <p><span data-lang="en">Administrative Coordinator, Gcontent</span><span data-lang="bn">অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর, Gcontent</span></p>
             </div>
             <div class="fact">
-                <h4>Location</h4>
-                <p>Dhaka, Bangladesh</p>
+                <h4><span data-lang="en">Location</span><span data-lang="bn">অবস্থান</span></h4>
+                <p><span data-lang="en">Dhaka, Bangladesh</span><span data-lang="bn">ঢাকা, বাংলাদেশ</span></p>
             </div>
             <div class="fact">
-                <h4>Education</h4>
-                <p>Executive MBA (in progress) — Presidency University<br>BA in English — Dhaka College (University of Dhaka)</p>
+                <h4><span data-lang="en">Education</span><span data-lang="bn">শিক্ষা</span></h4>
+                <p data-lang="en">MBA in MIS (in progress) — Presidency University<br>BA in English — Dhaka College (University of Dhaka)</p>
+                <p data-lang="bn">এমআইএস-এ এমবিএ (চলমান) — প্রেসিডেন্সি ইউনিভার্সিটি<br>ইংরেজিতে বিএ — ঢাকা কলেজ (ঢাকা বিশ্ববিদ্যালয়)</p>
             </div>
             <div class="fact">
-                <h4>Focus</h4>
-                <p>Operations, HR Administration, Workflow Automation</p>
+                <h4><span data-lang="en">Focus</span><span data-lang="bn">মূল কাজ</span></h4>
+                <p><span data-lang="en">Operations, HR Administration, Workflow Automation</span><span data-lang="bn">অপারেশনস, এইচআর প্রশাসন, ওয়ার্কফ্লো অটোমেশন</span></p>
             </div>
         </div>
 
@@ -178,43 +204,40 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 <section class="experience" id="experience">
 
-    <h2>Experience</h2>
+    <h2><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></h2>
 
     <div class="timeline">
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Administrative Coordinator</h3>
-                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2025 – Present</span>
-                <ul>
+                <h3><span data-lang="en">Administrative Coordinator</span><span data-lang="bn">অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর</span></h3>
+                <span class="timeline-meta"><span data-lang="en">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2025 – Present</span><span data-lang="bn">Gcontent, ঢাকা &nbsp;·&nbsp; এপ্রিল ২০২৫ – বর্তমান</span></span>
+                <ul data-lang="en">
                     <li>Lead daily operations for a workforce of 50+ employees across editorial, marketing, design, and administration.</li>
                     <li>Implement AI-driven workflow automation using n8n, saving 30+ hours per week.</li>
                     <li>Coordinate recruitment, onboarding, and policy implementation; prepare monthly reporting for leadership.</li>
                 </ul>
+                <ul data-lang="bn">
+                    <li>সম্পাদকীয়, মার্কেটিং, ডিজাইন ও প্রশাসন বিভাগের ৫০ জনেরও বেশি কর্মীর দৈনন্দিন কার্যক্রম পরিচালনা।</li>
+                    <li>n8n দিয়ে এআই-চালিত ওয়ার্কফ্লো অটোমেশন বাস্তবায়ন, যা প্রতি সপ্তাহে ৩০ ঘণ্টারও বেশি সময় বাঁচায়।</li>
+                    <li>নিয়োগ, অনবোর্ডিং ও নীতিমালা বাস্তবায়নের সমন্বয়; ঊর্ধ্বতন ব্যবস্থাপনার জন্য মাসিক রিপোর্ট তৈরি।</li>
+                </ul>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>HR & Admin</h3>
-                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2024 – Mar 2025</span>
-                <ul>
+                <h3><span data-lang="en">HR &amp; Admin</span><span data-lang="bn">এইচআর ও অ্যাডমিন</span></h3>
+                <span class="timeline-meta"><span data-lang="en">Gcontent, Dhaka &nbsp;·&nbsp; Apr 2024 – Mar 2025</span><span data-lang="bn">Gcontent, ঢাকা &nbsp;·&nbsp; এপ্রিল ২০২৪ – মার্চ ২০২৫</span></span>
+                <ul data-lang="en">
                     <li>Managed HR documentation, attendance, and leave records for 50+ active employees.</li>
                     <li>Supported recruitment end-to-end, from job posting through onboarding.</li>
                 </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-                <h3>Social Media Manager</h3>
-                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Dec 2022 – Mar 2024</span>
-                <ul>
-                    <li>Planned and executed data-driven social media strategy, growing audience engagement by 30%.</li>
-                    <li>Coordinated with designers, editors, and writers for timely content delivery.</li>
+                <ul data-lang="bn">
+                    <li>৫০ জনেরও বেশি কর্মীর এইচআর ডকুমেন্টেশন, হাজিরা ও ছুটির রেকর্ড ব্যবস্থাপনা।</li>
+                    <li>চাকরির বিজ্ঞপ্তি থেকে অনবোর্ডিং পর্যন্ত পুরো নিয়োগ প্রক্রিয়ায় সহায়তা।</li>
                 </ul>
             </div>
         </div>
@@ -222,10 +245,29 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Jr. Graphic Designer</h3>
-                <span class="timeline-meta">Gcontent, Dhaka &nbsp;·&nbsp; Dec 2021 – Jun 2023</span>
-                <ul>
+                <h3><span data-lang="en">Social Media Manager</span><span data-lang="bn">সোশ্যাল মিডিয়া ম্যানেজার</span></h3>
+                <span class="timeline-meta"><span data-lang="en">Gcontent, Dhaka &nbsp;·&nbsp; Dec 2022 – Mar 2024</span><span data-lang="bn">Gcontent, ঢাকা &nbsp;·&nbsp; ডিসেম্বর ২০২২ – মার্চ ২০২৪</span></span>
+                <ul data-lang="en">
+                    <li>Planned and executed data-driven social media strategy, growing audience engagement by 30%.</li>
+                    <li>Coordinated with designers, editors, and writers for timely content delivery.</li>
+                </ul>
+                <ul data-lang="bn">
+                    <li>ডেটাভিত্তিক সোশ্যাল মিডিয়া কৌশল পরিকল্পনা ও বাস্তবায়ন, যাতে অডিয়েন্স এনগেজমেন্ট ৩০% বেড়েছে।</li>
+                    <li>সময়মতো কনটেন্ট সরবরাহের জন্য ডিজাইনার, এডিটর ও লেখকদের সঙ্গে সমন্বয়।</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3><span data-lang="en">Jr. Graphic Designer</span><span data-lang="bn">জুনিয়র গ্রাফিক ডিজাইনার</span></h3>
+                <span class="timeline-meta"><span data-lang="en">Gcontent, Dhaka &nbsp;·&nbsp; Dec 2021 – Jun 2023</span><span data-lang="bn">Gcontent, ঢাকা &nbsp;·&nbsp; ডিসেম্বর ২০২১ – জুন ২০২৩</span></span>
+                <ul data-lang="en">
                     <li>Produced visual and video content using Adobe Illustrator, Photoshop, Premiere Pro, and Canva Pro.</li>
+                </ul>
+                <ul data-lang="bn">
+                    <li>Adobe Illustrator, Photoshop, Premiere Pro ও Canva Pro দিয়ে ভিজ্যুয়াল ও ভিডিও কনটেন্ট তৈরি।</li>
                 </ul>
             </div>
         </div>
@@ -236,81 +278,92 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 <section class="projects" id="projects">
 
-    <h2>Featured Projects</h2>
-    <p class="section-sub">Automations I've designed and shipped, grouped by what they do.</p>
+    <h2><span data-lang="en">Featured Projects</span><span data-lang="bn">উল্লেখযোগ্য প্রজেক্ট</span></h2>
+    <p class="section-sub"><span data-lang="en">Automations I've designed and shipped, grouped by what they do.</span><span data-lang="bn">আমার তৈরি ও চালু করা অটোমেশনগুলো, কাজের ধরন অনুযায়ী সাজানো।</span></p>
 
     <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="hr">HR & Operations</button>
-        <button class="filter-btn" data-filter="content">Content & Publishing</button>
-        <button class="filter-btn" data-filter="utility">Utility & Reliability</button>
+        <button class="filter-btn active" data-filter="all"><span data-lang="en">All</span><span data-lang="bn">সব</span></button>
+        <button class="filter-btn" data-filter="hr"><span data-lang="en">HR &amp; Operations</span><span data-lang="bn">এইচআর ও অপারেশনস</span></button>
+        <button class="filter-btn" data-filter="content"><span data-lang="en">Content &amp; Publishing</span><span data-lang="bn">কনটেন্ট ও পাবলিশিং</span></button>
+        <button class="filter-btn" data-filter="utility"><span data-lang="en">Utility &amp; Reliability</span><span data-lang="bn">ইউটিলিটি ও নির্ভরযোগ্যতা</span></button>
     </div>
 
     <div class="project-grid">
 
         <div class="project-card" data-category="hr">
-            <h3>📊 Daily Work Summary → CEO Report</h3>
-            <p>Pulls each employee's daily work log, compiles an HTML summary, and emails it to the CEO automatically at day's end.</p>
+            <h3>📊 <span data-lang="en">Daily Work Summary → CEO Report</span><span data-lang="bn">দৈনিক কাজের সারাংশ → সিইও রিপোর্ট</span></h3>
+            <p data-lang="en">Pulls each employee's daily work log, compiles an HTML summary, and emails it to the CEO automatically at day's end.</p>
+            <p data-lang="bn">প্রত্যেক কর্মীর দৈনিক কাজের লগ সংগ্রহ করে একটি HTML সারাংশ তৈরি করে, এবং দিনশেষে স্বয়ংক্রিয়ভাবে সিইওকে ইমেইল করে।</p>
             <div class="tech"><span>n8n</span><span>Google Sheets</span><span>HTML Mail</span></div>
         </div>
 
         <div class="project-card" data-category="hr">
-            <h3>📝 Editor Distribution System 2026</h3>
-            <p>Assigns scripts to editors automatically using a round-robin system and emails each editor their task.</p>
+            <h3>📝 <span data-lang="en">Editor Distribution System 2026</span><span data-lang="bn">এডিটর ডিস্ট্রিবিউশন সিস্টেম ২০২৬</span></h3>
+            <p data-lang="en">Assigns scripts to editors automatically using a round-robin system and emails each editor their task.</p>
+            <p data-lang="bn">রাউন্ড-রবিন পদ্ধতিতে এডিটরদের মধ্যে স্বয়ংক্রিয়ভাবে স্ক্রিপ্ট ভাগ করে দেয় এবং প্রত্যেককে তার কাজ ইমেইল করে।</p>
             <div class="tech"><span>n8n</span><span>Google Sheets</span><span>Gmail</span></div>
         </div>
 
         <div class="project-card" data-category="hr">
-            <h3>📧 Candidate Interview Mailer</h3>
-            <p>Sends interview status updates to hundreds of candidates automatically during hiring rounds.</p>
+            <h3>📧 <span data-lang="en">Candidate Interview Mailer</span><span data-lang="bn">প্রার্থী ইন্টারভিউ মেইলার</span></h3>
+            <p data-lang="en">Sends interview status updates to hundreds of candidates automatically during hiring rounds.</p>
+            <p data-lang="bn">নিয়োগের সময় শত শত প্রার্থীকে স্বয়ংক্রিয়ভাবে ইন্টারভিউয়ের আপডেট পাঠায়।</p>
             <div class="tech"><span>n8n</span><span>Sheets</span><span>Gmail</span></div>
         </div>
 
         <div class="project-card" data-category="hr">
-            <h3>📥 Script Collection Aggregator</h3>
-            <p>Watches every writer's individual sheet and appends new scripts into one master tracking sheet.</p>
+            <h3>📥 <span data-lang="en">Script Collection Aggregator</span><span data-lang="bn">স্ক্রিপ্ট কালেকশন অ্যাগ্রিগেটর</span></h3>
+            <p data-lang="en">Watches every writer's individual sheet and appends new scripts into one master tracking sheet.</p>
+            <p data-lang="bn">প্রত্যেক লেখকের আলাদা শিটে নজর রাখে এবং নতুন স্ক্রিপ্টগুলো একটি মাস্টার ট্র্যাকিং শিটে যুক্ত করে।</p>
             <div class="tech"><span>n8n</span><span>Google Sheets</span></div>
         </div>
 
         <div class="project-card" data-category="hr">
-            <h3>📈 Content Tracker</h3>
-            <p>Tracks and updates total content created across the whole team throughout the day, live.</p>
+            <h3>📈 <span data-lang="en">Content Tracker</span><span data-lang="bn">কনটেন্ট ট্র্যাকার</span></h3>
+            <p data-lang="en">Tracks and updates total content created across the whole team throughout the day, live.</p>
+            <p data-lang="bn">সারাদিন পুরো টিম মোট কতগুলো কনটেন্ট তৈরি করল, তা লাইভ ট্র্যাক ও আপডেট করে।</p>
             <div class="tech"><span>n8n</span><span>Google Sheets</span></div>
         </div>
 
         <div class="project-card" data-category="content">
-            <h3>🎬 AutoVid + Caption Generator</h3>
-            <p>Creates viral-style reels with satisfying background video and large captions, at zero cost.</p>
+            <h3>🎬 <span data-lang="en">AutoVid + Caption Generator</span><span data-lang="bn">অটোভিড + ক্যাপশন জেনারেটর</span></h3>
+            <p data-lang="en">Creates viral-style reels with satisfying background video and large captions, at zero cost.</p>
+            <p data-lang="bn">আকর্ষণীয় ব্যাকগ্রাউন্ড ভিডিও আর বড় ক্যাপশনসহ ভাইরাল-স্টাইলের রিল তৈরি করে, কোনো খরচ ছাড়াই।</p>
             <div class="tech"><span>FFmpeg</span><span>Whisper AI</span><span>n8n</span></div>
         </div>
 
         <div class="project-card" data-category="content">
-            <h3>▶️ YouTube Auto-Publisher</h3>
-            <p>Takes finished content straight through to a live YouTube upload automatically.</p>
+            <h3>▶️ <span data-lang="en">YouTube Auto-Publisher</span><span data-lang="bn">ইউটিউব অটো-পাবলিশার</span></h3>
+            <p data-lang="en">Takes finished content straight through to a live YouTube upload automatically.</p>
+            <p data-lang="bn">তৈরি কনটেন্ট সরাসরি স্বয়ংক্রিয়ভাবে ইউটিউবে আপলোড করে লাইভ করে দেয়।</p>
             <div class="tech"><span>n8n</span><span>YouTube API</span></div>
         </div>
 
         <div class="project-card" data-category="content">
-            <h3>🎧 YouTube Audio + Satisfying Video Publisher</h3>
-            <p>Pairs audio content with satisfying background visuals and auto-publishes to YouTube.</p>
+            <h3>🎧 <span data-lang="en">YouTube Audio + Satisfying Video Publisher</span><span data-lang="bn">ইউটিউব অডিও + স্যাটিসফাইং ভিডিও পাবলিশার</span></h3>
+            <p data-lang="en">Pairs audio content with satisfying background visuals and auto-publishes to YouTube.</p>
+            <p data-lang="bn">অডিও কনটেন্টের সঙ্গে আকর্ষণীয় ব্যাকগ্রাউন্ড ভিজ্যুয়াল জুড়ে দিয়ে স্বয়ংক্রিয়ভাবে ইউটিউবে প্রকাশ করে।</p>
             <div class="tech"><span>n8n</span><span>FFmpeg</span><span>YouTube API</span></div>
         </div>
 
         <div class="project-card" data-category="content">
-            <h3>🎵 TikTok Auto-Publisher</h3>
-            <p>Downloads finished videos from Google Drive and publishes them to TikTok via browser automation.</p>
+            <h3>🎵 <span data-lang="en">TikTok Auto-Publisher</span><span data-lang="bn">টিকটক অটো-পাবলিশার</span></h3>
+            <p data-lang="en">Downloads finished videos from Google Drive and publishes them to TikTok via browser automation.</p>
+            <p data-lang="bn">Google Drive থেকে তৈরি ভিডিও ডাউনলোড করে ব্রাউজার অটোমেশনের মাধ্যমে টিকটকে প্রকাশ করে।</p>
             <div class="tech"><span>n8n</span><span>Playwright</span><span>Google Drive</span></div>
         </div>
 
         <div class="project-card" data-category="utility">
-            <h3>🤖 Telegram English–Bangla Dictionary Bot</h3>
-            <p>Instantly returns Bangla meanings for English words on request, right inside Telegram.</p>
+            <h3>🤖 <span data-lang="en">Telegram English–Bangla Dictionary Bot</span><span data-lang="bn">টেলিগ্রাম ইংরেজি–বাংলা অভিধান বট</span></h3>
+            <p data-lang="en">Instantly returns Bangla meanings for English words on request, right inside Telegram.</p>
+            <p data-lang="bn">টেলিগ্রামের ভেতরেই ইংরেজি শব্দের বাংলা অর্থ সঙ্গে সঙ্গে জানিয়ে দেয়।</p>
             <div class="tech"><span>n8n</span><span>Telegram API</span></div>
         </div>
 
         <div class="project-card" data-category="utility">
-            <h3>🛠️ Workflow Reliability Monitor</h3>
-            <p>Watches automation pipelines for failures and flags them immediately, before they miss a publish.</p>
+            <h3>🛠️ <span data-lang="en">Workflow Reliability Monitor</span><span data-lang="bn">ওয়ার্কফ্লো রিলায়েবিলিটি মনিটর</span></h3>
+            <p data-lang="en">Watches automation pipelines for failures and flags them immediately, before they miss a publish.</p>
+            <p data-lang="bn">অটোমেশন পাইপলাইনে কোনো ত্রুটি হলে সঙ্গে সঙ্গে জানিয়ে দেয়, যাতে কোনো পাবলিশ বাদ না পড়ে।</p>
             <div class="tech"><span>n8n</span><span>Error Triggers</span></div>
         </div>
 
@@ -320,47 +373,47 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 <section class="skills" id="skills">
 
-    <h2>Skills</h2>
+    <h2><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></h2>
 
     <div class="skills-grid">
 
         <div class="skill-card">
-            <h3>Operations & HR</h3>
+            <h3><span data-lang="en">Operations &amp; HR</span><span data-lang="bn">অপারেশনস ও এইচআর</span></h3>
             <div class="tech">
-                <span>Operations Management</span>
-                <span>Team Leadership</span>
-                <span>Recruitment & Onboarding</span>
-                <span>KPI Reporting</span>
-                <span>Process Improvement</span>
-                <span>Event Coordination</span>
+                <span><span data-lang="en">Operations Management</span><span data-lang="bn">অপারেশনস ম্যানেজমেন্ট</span></span>
+                <span><span data-lang="en">Team Leadership</span><span data-lang="bn">টিম নেতৃত্ব</span></span>
+                <span><span data-lang="en">Recruitment &amp; Onboarding</span><span data-lang="bn">নিয়োগ ও অনবোর্ডিং</span></span>
+                <span><span data-lang="en">KPI Reporting</span><span data-lang="bn">KPI রিপোর্টিং</span></span>
+                <span><span data-lang="en">Process Improvement</span><span data-lang="bn">প্রক্রিয়া উন্নয়ন</span></span>
+                <span><span data-lang="en">Event Coordination</span><span data-lang="bn">ইভেন্ট সমন্বয়</span></span>
             </div>
         </div>
 
         <div class="skill-card">
-            <h3>Automation & AI</h3>
+            <h3><span data-lang="en">Automation &amp; AI</span><span data-lang="bn">অটোমেশন ও এআই</span></h3>
             <div class="tech">
                 <span>n8n</span>
                 <span>Zoho</span>
                 <span>FFmpeg</span>
                 <span>Whisper AI</span>
                 <span>Playwright</span>
-                <span>ChatGPT / AI Tools</span>
+                <span><span data-lang="en">ChatGPT / AI Tools</span><span data-lang="bn">ChatGPT / এআই টুলস</span></span>
             </div>
         </div>
 
         <div class="skill-card">
-            <h3>Content & Design</h3>
+            <h3><span data-lang="en">Content &amp; Design</span><span data-lang="bn">কনটেন্ট ও ডিজাইন</span></h3>
             <div class="tech">
                 <span>Canva</span>
                 <span>Adobe Photoshop</span>
                 <span>Adobe Illustrator</span>
                 <span>Premiere Pro</span>
-                <span>Local SEO</span>
+                <span><span data-lang="en">Local SEO</span><span data-lang="bn">লোকাল SEO</span></span>
             </div>
         </div>
 
         <div class="skill-card">
-            <h3>Tools & Platforms</h3>
+            <h3><span data-lang="en">Tools &amp; Platforms</span><span data-lang="bn">টুলস ও প্ল্যাটফর্ম</span></h3>
             <div class="tech">
                 <span>Google Workspace</span>
                 <span>Microsoft Office</span>
@@ -376,16 +429,16 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 
 <section class="contact" id="contact">
 
-    <h2>Let's Connect</h2>
-    <p class="section-sub">Open to operations, admin, and automation-focused roles — or a conversation about a workflow you'd like built.</p>
+    <h2><span data-lang="en">Let's Connect</span><span data-lang="bn">যোগাযোগ করুন</span></h2>
+    <p class="section-sub"><span data-lang="en">Open to operations, admin, and automation-focused roles — or a conversation about a workflow you'd like built.</span><span data-lang="bn">অপারেশনস, প্রশাসন ও অটোমেশনভিত্তিক কাজের সুযোগে আগ্রহী। কোনো ওয়ার্কফ্লো অটোমেট করাতে চাইলেও কথা বলতে পারেন।</span></p>
 
     <div class="contact-cards">
         <a class="contact-card" href="mailto:almamunn2001@gmail.com">
-            <h4>Email</h4>
+            <h4><span data-lang="en">Email</span><span data-lang="bn">ইমেইল</span></h4>
             <p>almamunn2001@gmail.com</p>
         </a>
         <a class="contact-card" href="tel:+8801721321530">
-            <h4>Phone</h4>
+            <h4><span data-lang="en">Phone</span><span data-lang="bn">ফোন</span></h4>
             <p>+880 1721-321530</p>
         </a>
         <a class="contact-card" href="https://linkedin.com/in/almamun0fficial" target="_blank" rel="noopener">
@@ -393,8 +446,8 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
             <p>linkedin.com/in/almamun0fficial</p>
         </a>
         <div class="contact-card">
-            <h4>Location</h4>
-            <p>Dhaka, Bangladesh</p>
+            <h4><span data-lang="en">Location</span><span data-lang="bn">অবস্থান</span></h4>
+            <p><span data-lang="en">Dhaka, Bangladesh</span><span data-lang="bn">ঢাকা, বাংলাদেশ</span></p>
         </div>
     </div>
 
@@ -403,7 +456,7 @@ I lead day-to-day operations for a 50+ person team and build automation systems 
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
