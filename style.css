@@ -1042,6 +1042,7 @@ a.logo { display: inline-block; }
 
 .gallery figcaption { color: var(--muted); font-size: 0.78rem; margin-top: 6px; }
 .gallery figure.tall img { aspect-ratio: 3 / 4; object-position: center top; }
+.gallery figure.wide img { aspect-ratio: 4 / 3; object-position: center 35%; }
 .gallery a { display: block; border-radius: 10px; }
 .gallery a:hover img { border-color: var(--primary); }
 .gallery img { transition: border-color 0.2s ease; }
