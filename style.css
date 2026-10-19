@@ -1089,3 +1089,58 @@ html[lang="bn"] .chapter-body p { line-height: 1.75; }
     .logo { font-size: 1rem; }
     nav { padding-left: 5%; padding-right: 5%; }
 }
+
+/* ===== Story hero photo + 8-item nav ===== */
+.read-more-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+
+.story-hero {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 26px;
+}
+
+.story-photo {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 24px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--photo-shadow);
+}
+
+.story-hero .story-intro { margin-bottom: 0; }
+
+@media (max-width: 1200px) and (min-width: 1081px) {
+    nav ul { gap: 22px; }
+    nav ul li a { font-size: 0.9rem; }
+}
+
+/* Tablets: use the same dropdown menu as phones */
+@media (max-width: 1080px) and (min-width: 721px) {
+    nav ul {
+        position: fixed;
+        top: 81px; left: 0; right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        padding: 30px 0;
+        border-bottom: 1px solid var(--line);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    nav ul.open { transform: translateY(0); opacity: 1; }
+
+    .nav-toggle { display: flex; }
+}
+
+@media (max-width: 720px) {
+    .story-hero { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .story-photo { width: 150px; height: 150px; border-radius: 20px; }
+}
