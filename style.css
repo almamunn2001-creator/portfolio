@@ -1006,7 +1006,7 @@ a.logo { display: inline-block; }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 12px;
     margin-top: 20px;
 }
@@ -1041,6 +1041,10 @@ a.logo { display: inline-block; }
 }
 
 .gallery figcaption { color: var(--muted); font-size: 0.78rem; margin-top: 6px; }
+.gallery figure.tall img { aspect-ratio: 3 / 4; object-position: center top; }
+.gallery a { display: block; border-radius: 10px; }
+.gallery a:hover img { border-color: var(--primary); }
+.gallery img { transition: border-color 0.2s ease; }
 
 @media (max-width: 720px) {
     .story-facts { grid-template-columns: 1fr; }
