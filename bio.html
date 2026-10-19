@@ -8,11 +8,16 @@
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
     <meta property="og:type" content="profile">
@@ -24,29 +29,30 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <a class="logo" href="index.html">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </a>
 
     <ul id="navMenu">
-        <li><a href="index.html#home" class="nav-link">Home</a></li>
-        <li><a href="bio.html" class="nav-link active" aria-current="page">Bio</a></li>
-        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
-        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="index.html#home" class="nav-link"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="bio.html" class="nav-link active" aria-current="page"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="index.html#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="index.html#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="index.html#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="blog.html" class="nav-link"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="index.html#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -61,84 +67,95 @@
     <header class="bio-header">
         <img class="bio-photo" src="images/profile.jpg" alt="Portrait of Abdullah Al Mamun" width="140" height="140">
         <div>
-            <span class="post-meta">Bio</span>
-            <h1>Abdullah Al Mamun</h1>
-            <p class="bio-role">Administrative Coordinator &nbsp;·&nbsp; Operations &amp; AI Workflow Automation</p>
-            <p class="bio-location">Dhaka, Bangladesh</p>
+            <span class="post-meta"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></span>
+            <h1><span data-lang="en">Abdullah Al Mamun</span><span data-lang="bn">আব্দুল্লাহ আল মামুন</span></h1>
+            <p class="bio-role"><span data-lang="en">Administrative Coordinator &nbsp;·&nbsp; Operations &amp; AI Workflow Automation</span><span data-lang="bn">অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর &nbsp;·&nbsp; অপারেশনস ও এআই ওয়ার্কফ্লো অটোমেশন</span></p>
+            <p class="bio-location"><span data-lang="en">Dhaka, Bangladesh</span><span data-lang="bn">ঢাকা, বাংলাদেশ</span></p>
         </div>
     </header>
 
     <div class="post-body">
 
-        <h2>My story</h2>
+        <h2><span data-lang="en">My story</span><span data-lang="bn">আমার গল্প</span></h2>
 
-        <p class="bio-life-link"><a href="story.html">From Cumilla and Shahrasti to Dhaka: read my full life story, family and photos &rarr;</a></p>
+        <p class="bio-life-link"><a href="story.html"><span data-lang="en">From Cumilla and Shahrasti to Dhaka: read my full life story, family and photos &rarr;</span><span data-lang="bn">কুমিল্লা ও শাহরাস্তি থেকে ঢাকা: আমার পুরো জীবনের গল্প, পরিবার ও ছবি দেখুন &rarr;</span></a></p>
 
-        <p>I'm Abdullah Al Mamun, an Administrative Coordinator based in Dhaka, Bangladesh. I lead day-to-day operations for Gcontent, a media organization of more than 50 people working across editorial, marketing, design, and administration.</p>
+        <p data-lang="en">I'm Abdullah Al Mamun, an Administrative Coordinator based in Dhaka, Bangladesh. I lead day-to-day operations for Gcontent, a media organization of more than 50 people working across editorial, marketing, design, and administration.</p>
+        <p data-lang="bn">আমি আব্দুল্লাহ আল মামুন, ঢাকায় কর্মরত একজন অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর। আমি Gcontent-এর দৈনন্দিন কার্যক্রম পরিচালনা করি। এটি একটি মিডিয়া প্রতিষ্ঠান, যেখানে সম্পাদকীয়, মার্কেটিং, ডিজাইন ও প্রশাসন বিভাগে ৫০ জনেরও বেশি মানুষ কাজ করেন।</p>
 
-        <p>I didn't start in operations. I joined Gcontent in December 2021 as a Junior Graphic Designer, making visual and video content in Illustrator, Photoshop, Premiere Pro, and Canva. Within a year I moved into social media management, where I planned a data-driven strategy that grew audience engagement by 30% and learned how to keep designers, editors, and writers delivering on time.</p>
+        <p data-lang="en">I didn't start in operations. I joined Gcontent in December 2021 as a Junior Graphic Designer, making visual and video content in Illustrator, Photoshop, Premiere Pro, and Canva. Within a year I moved into social media management, where I planned a data-driven strategy that grew audience engagement by 30% and learned how to keep designers, editors, and writers delivering on time.</p>
+        <p data-lang="bn">আমার শুরুটা অপারেশনসে ছিল না। ২০২১ সালের ডিসেম্বরে আমি জুনিয়র গ্রাফিক ডিজাইনার হিসেবে Gcontent-এ যোগ দিই এবং Illustrator, Photoshop, Premiere Pro ও Canva দিয়ে ভিজ্যুয়াল ও ভিডিও কনটেন্ট তৈরি করতাম। এক বছরের মধ্যেই সোশ্যাল মিডিয়া ম্যানেজমেন্টে যাই। সেখানে ডেটাভিত্তিক কৌশল পরিকল্পনা করে অডিয়েন্স এনগেজমেন্ট ৩০% বাড়াই, আর শিখি কীভাবে ডিজাইনার, এডিটর ও লেখকদের কাজ সময়মতো নিশ্চিত করতে হয়।</p>
 
-        <p>In 2024 I moved into HR &amp; Admin, looking after documentation, attendance, leave records, and recruitment from job posting through onboarding. In April 2025 I was promoted to Administrative Coordinator, my third promotion in three years, and took on responsibility for daily operations, policy, and monthly reporting to leadership.</p>
+        <p data-lang="en">In 2024 I moved into HR &amp; Admin, looking after documentation, attendance, leave records, and recruitment from job posting through onboarding. In April 2025 I was promoted to Administrative Coordinator, my third promotion in three years, and took on responsibility for daily operations, policy, and monthly reporting to leadership.</p>
+        <p data-lang="bn">২০২৪ সালে আমি এইচআর ও অ্যাডমিন বিভাগে যাই। সেখানে ডকুমেন্টেশন, হাজিরা, ছুটির রেকর্ড এবং চাকরির বিজ্ঞপ্তি থেকে অনবোর্ডিং পর্যন্ত পুরো নিয়োগ প্রক্রিয়া দেখাশোনা করতাম। ২০২৫ সালের এপ্রিলে অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর পদে পদোন্নতি পাই, যা তিন বছরে আমার তৃতীয় পদোন্নতি। এখন দৈনন্দিন কার্যক্রম, নীতিমালা এবং ঊর্ধ্বতন ব্যবস্থাপনার কাছে মাসিক রিপোর্টের দায়িত্ব আমার।</p>
 
-        <p>Along the way I noticed how much of my own job was repetitive: compiling reports, assigning tasks, chasing updates, emailing candidates. So I started automating it. What began as a few time-savers grew into a toolkit of 11 automations now running in production, built mainly with n8n, Google Workspace, and Zoho, and together saving the team more than 30 hours every week.</p>
+        <p data-lang="en">Along the way I noticed how much of my own job was repetitive: compiling reports, assigning tasks, chasing updates, emailing candidates. So I started automating it. What began as a few time-savers grew into a toolkit of 11 automations now running in production, built mainly with n8n, Google Workspace, and Zoho, and together saving the team more than 30 hours every week.</p>
+        <p data-lang="bn">কাজ করতে গিয়ে দেখলাম, আমার নিজের কাজের অনেকটাই একই জিনিসের পুনরাবৃত্তি: রিপোর্ট তৈরি, কাজ ভাগ করে দেওয়া, আপডেটের খোঁজ নেওয়া, প্রার্থীদের ইমেইল করা। তাই এগুলো অটোমেট করতে শুরু করি। কয়েকটি ছোট উদ্যোগ থেকে শুরু হয়ে এখন ১১টি অটোমেশন নিয়মিত চলছে, যার বেশিরভাগই n8n, Google Workspace ও Zoho দিয়ে তৈরি। সব মিলিয়ে এগুলো প্রতি সপ্তাহে টিমের ৩০ ঘণ্টারও বেশি সময় বাঁচায়।</p>
 
-        <p>Today my work sits where people and systems meet: keeping a growing team organised, and building the automations that let them spend their time on work that actually needs a person.</p>
+        <p data-lang="en">Today my work sits where people and systems meet: keeping a growing team organised, and building the automations that let them spend their time on work that actually needs a person.</p>
+        <p data-lang="bn">আজ আমার কাজ মানুষ আর সিস্টেমের মাঝখানে: একটি বড় হতে থাকা টিমকে গুছিয়ে রাখা, আর এমন অটোমেশন তৈরি করা যাতে সবাই সেই কাজে সময় দিতে পারেন, যেখানে সত্যিই মানুষের প্রয়োজন।</p>
 
-        <h2>Career journey</h2>
+        <h2><span data-lang="en">Career journey</span><span data-lang="bn">ক্যারিয়ারের পথচলা</span></h2>
     </div>
 
     <div class="timeline bio-timeline">
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Administrative Coordinator</h3>
-                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; Apr 2025 – Present</span>
+                <h3><span data-lang="en">Administrative Coordinator</span><span data-lang="bn">অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর</span></h3>
+                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; <span data-lang="en">Apr 2025 – Present</span><span data-lang="bn">এপ্রিল ২০২৫ – বর্তমান</span></span>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>HR &amp; Admin</h3>
-                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; Apr 2024 – Mar 2025</span>
+                <h3><span data-lang="en">HR &amp; Admin</span><span data-lang="bn">এইচআর ও অ্যাডমিন</span></h3>
+                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; <span data-lang="en">Apr 2024 – Mar 2025</span><span data-lang="bn">এপ্রিল ২০২৪ – মার্চ ২০২৫</span></span>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Social Media Manager</h3>
-                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; Dec 2022 – Mar 2024</span>
+                <h3><span data-lang="en">Social Media Manager</span><span data-lang="bn">সোশ্যাল মিডিয়া ম্যানেজার</span></h3>
+                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; <span data-lang="en">Dec 2022 – Mar 2024</span><span data-lang="bn">ডিসেম্বর ২০২২ – মার্চ ২০২৪</span></span>
             </div>
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-                <h3>Jr. Graphic Designer</h3>
-                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; Dec 2021 – Jun 2023</span>
+                <h3><span data-lang="en">Jr. Graphic Designer</span><span data-lang="bn">জুনিয়র গ্রাফিক ডিজাইনার</span></h3>
+                <span class="timeline-meta">Gcontent &nbsp;·&nbsp; <span data-lang="en">Dec 2021 – Jun 2023</span><span data-lang="bn">ডিসেম্বর ২০২১ – জুন ২০২৩</span></span>
             </div>
         </div>
     </div>
 
     <div class="post-body">
 
-        <h2>Education</h2>
-        <ul>
+        <h2><span data-lang="en">Education</span><span data-lang="bn">শিক্ষা</span></h2>
+        <ul data-lang="en">
             <li><strong>Executive MBA in Marketing Management</strong>, Presidency University, Bangladesh (in progress)</li>
             <li><strong>BA in English</strong>, Dhaka College (affiliated with the University of Dhaka)</li>
         </ul>
+        <ul data-lang="bn">
+            <li><strong>মার্কেটিং ম্যানেজমেন্টে এক্সিকিউটিভ এমবিএ</strong>, প্রেসিডেন্সি ইউনিভার্সিটি, বাংলাদেশ (চলমান)</li>
+            <li><strong>ইংরেজিতে বিএ</strong>, ঢাকা কলেজ (ঢাকা বিশ্ববিদ্যালয়ের অধিভুক্ত)</li>
+        </ul>
 
-        <h2>What I'm looking for</h2>
-        <p>I'm open to operations, administration, and automation-focused roles, and to conversations with teams who have a repetitive workflow they'd like to see automated.</p>
+        <h2><span data-lang="en">What I'm looking for</span><span data-lang="bn">আমি যা খুঁজছি</span></h2>
+        <p data-lang="en">I'm open to operations, administration, and automation-focused roles, and to conversations with teams who have a repetitive workflow they'd like to see automated.</p>
+        <p data-lang="bn">আমি অপারেশনস, প্রশাসন ও অটোমেশনভিত্তিক কাজের সুযোগে আগ্রহী। যেসব টিমের কোনো পুনরাবৃত্তিমূলক কাজ অটোমেট করা দরকার, তাদের সঙ্গেও কথা বলতে চাই।</p>
 
-        <h2>Ready-to-use bios</h2>
-        <p>Need a bio for an event, article, or introduction? Feel free to copy one of these.</p>
+        <h2><span data-lang="en">Ready-to-use bios</span><span data-lang="bn">ব্যবহারের জন্য প্রস্তুত পরিচিতি</span></h2>
+        <p data-lang="en">Need a bio for an event, article, or introduction? Feel free to copy one of these.</p>
+        <p data-lang="bn">কোনো অনুষ্ঠান, লেখা বা পরিচয়ের জন্য পরিচিতি দরকার? নিচের যেকোনোটি কপি করে নিন।</p>
 
     </div>
 
-    <div class="bio-copy">
+    <div class="bio-copy" data-lang="en">
         <div class="bio-copy-card">
             <div class="bio-copy-head">
                 <h3>Short</h3>
-                <button class="copy-btn" type="button" data-copy="bioShort">Copy</button>
+                <button class="copy-btn" type="button" data-copy="bioShort" data-done="Copied!">Copy</button>
             </div>
             <p id="bioShort">Abdullah Al Mamun is an Administrative Coordinator in Dhaka, Bangladesh, who leads operations for a 50+ person media team and builds AI-powered automations with n8n that save more than 30 hours a week.</p>
         </div>
@@ -146,16 +163,34 @@
         <div class="bio-copy-card">
             <div class="bio-copy-head">
                 <h3>Long</h3>
-                <button class="copy-btn" type="button" data-copy="bioLong">Copy</button>
+                <button class="copy-btn" type="button" data-copy="bioLong" data-done="Copied!">Copy</button>
             </div>
             <p id="bioLong">Abdullah Al Mamun is an Administrative Coordinator at Gcontent in Dhaka, Bangladesh, leading daily operations for a team of more than 50 people across editorial, marketing, design, and administration. Starting as a Junior Graphic Designer in December 2021, Abdullah was promoted three times in three years, through social media management and HR &amp; Admin, to the current role. Alongside operations, Abdullah designs workflow automations using n8n, Google Workspace, and Zoho; 11 of them now run in production, saving the team more than 30 hours every week. Abdullah holds a BA in English from Dhaka College, affiliated with the University of Dhaka, and is pursuing an Executive MBA in Marketing Management at Presidency University.</p>
         </div>
     </div>
 
+    <div class="bio-copy" data-lang="bn">
+        <div class="bio-copy-card">
+            <div class="bio-copy-head">
+                <h3>সংক্ষিপ্ত</h3>
+                <button class="copy-btn" type="button" data-copy="bioShortBn" data-done="কপি হয়েছে!">কপি</button>
+            </div>
+            <p id="bioShortBn">আব্দুল্লাহ আল মামুন ঢাকার একজন অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর। তিনি ৫০ জনেরও বেশি সদস্যের একটি মিডিয়া টিমের কার্যক্রম পরিচালনা করেন এবং n8n দিয়ে এআই-চালিত অটোমেশন তৈরি করেন, যা প্রতি সপ্তাহে ৩০ ঘণ্টারও বেশি সময় বাঁচায়।</p>
+        </div>
+
+        <div class="bio-copy-card">
+            <div class="bio-copy-head">
+                <h3>বিস্তারিত</h3>
+                <button class="copy-btn" type="button" data-copy="bioLongBn" data-done="কপি হয়েছে!">কপি</button>
+            </div>
+            <p id="bioLongBn">আব্দুল্লাহ আল মামুন ঢাকার Gcontent-এ অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর হিসেবে কর্মরত। সেখানে তিনি সম্পাদকীয়, মার্কেটিং, ডিজাইন ও প্রশাসন বিভাগের ৫০ জনেরও বেশি সদস্যের দৈনন্দিন কার্যক্রম পরিচালনা করেন। ২০২১ সালের ডিসেম্বরে জুনিয়র গ্রাফিক ডিজাইনার হিসেবে যাত্রা শুরু করে, সোশ্যাল মিডিয়া ম্যানেজমেন্ট এবং এইচআর ও অ্যাডমিন হয়ে, তিন বছরে তিনবার পদোন্নতি পেয়ে তিনি বর্তমান পদে এসেছেন। পাশাপাশি তিনি n8n, Google Workspace ও Zoho দিয়ে ওয়ার্কফ্লো অটোমেশন তৈরি করেন; তাঁর ১১টি অটোমেশন এখন নিয়মিত চলছে, যা প্রতি সপ্তাহে টিমের ৩০ ঘণ্টারও বেশি সময় বাঁচায়। তিনি ঢাকা বিশ্ববিদ্যালয়ের অধিভুক্ত ঢাকা কলেজ থেকে ইংরেজিতে বিএ করেছেন এবং বর্তমানে প্রেসিডেন্সি ইউনিভার্সিটিতে মার্কেটিং ম্যানেজমেন্টে এক্সিকিউটিভ এমবিএ করছেন।</p>
+        </div>
+    </div>
+
     <div class="post-footer bio-actions">
         <div class="buttons">
-            <a href="assets/Abdullah-Al-Mamun-CV.pdf" class="primary" download>Download CV</a>
-            <a href="mailto:almamunn2001@gmail.com" class="secondary">Email me</a>
+            <a href="assets/Abdullah-Al-Mamun-CV.pdf" class="primary" download><span data-lang="en">Download CV</span><span data-lang="bn">সিভি ডাউনলোড</span></a>
+            <a href="mailto:almamunn2001@gmail.com" class="secondary"><span data-lang="en">Email me</span><span data-lang="bn">ইমেইল করুন</span></a>
             <a href="https://linkedin.com/in/almamun0fficial" class="secondary" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </div>
@@ -165,7 +200,7 @@
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>

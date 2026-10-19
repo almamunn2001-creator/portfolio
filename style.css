@@ -101,6 +101,8 @@ nav.scrolled { box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08); }
     color: var(--primary);
 }
 
+.logo > span[data-lang] { color: var(--ink); }
+
 nav ul {
     display: flex;
     gap: 34px;
@@ -994,7 +996,7 @@ a.logo { display: inline-block; }
     border-radius: 10px;
 }
 
-.milestones li span {
+.milestones li > span:first-child {
     flex-shrink: 0;
     min-width: 84px;
     color: var(--primary);
@@ -1010,6 +1012,23 @@ a.logo { display: inline-block; }
 }
 
 .gallery:empty { display: none; }
+
+.photo-placeholder {
+    grid-column: 1 / -1;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 2px dashed var(--line);
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--muted);
+}
+
+.photo-placeholder > span { font-size: 1.8rem; opacity: 0.7; }
+.gallery .photo-placeholder figcaption { margin-top: 0; font-size: 0.85rem; font-weight: 500; }
 
 .gallery figure { margin: 0; }
 
@@ -1031,4 +1050,42 @@ a.logo { display: inline-block; }
     .chapters::before { left: 17px; }
     .chapter-body { padding: 20px; }
     .milestones li { flex-direction: column; gap: 2px; }
+}
+
+/* ===== Language toggle (English / Bangla) ===== */
+html[data-lang="bn"] [data-lang="en"],
+html:not([data-lang="bn"]) [data-lang="bn"] { display: none !important; }
+
+html[lang="bn"] body,
+html[lang="bn"] button { font-family: 'Hind Siliguri', 'Poppins', sans-serif; }
+
+html[lang="bn"] .post-body,
+html[lang="bn"] .chapter-body p { line-height: 1.75; }
+
+.lang-toggle {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 100px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.lang-toggle:hover { border-color: var(--primary); color: var(--primary); transform: none; }
+
+@media (max-width: 720px) {
+    .nav-actions { gap: 6px; }
+    .nav-actions .theme-toggle { width: 36px; height: 36px; }
+    .lang-toggle { min-width: 36px; height: 36px; padding: 0 9px; }
+    .photo-placeholder { height: 150px; }
+}
+
+@media (max-width: 400px) {
+    .logo { font-size: 1rem; }
+    nav { padding-left: 5%; padding-right: 5%; }
 }

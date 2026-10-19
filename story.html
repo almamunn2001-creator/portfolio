@@ -8,11 +8,16 @@
     <meta name="theme-color" content="#4F46E5">
     <script>
         (function () {
+            var root = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', t);
+                root.setAttribute('data-theme', t);
             } catch (e) {}
+            var l = 'en';
+            try { l = localStorage.getItem('lang') === 'bn' ? 'bn' : 'en'; } catch (e) {}
+            root.setAttribute('data-lang', l);
+            root.setAttribute('lang', l);
         })();
     </script>
     <meta property="og:type" content="profile">
@@ -24,29 +29,30 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main"><span data-lang="en">Skip to content</span><span data-lang="bn">মূল অংশে যান</span></a>
 
 <nav>
     <a class="logo" href="index.html">
-        Abdullah <span>Al Mamun</span>
+        <span data-lang="en">Abdullah <span>Al Mamun</span></span><span data-lang="bn">আব্দুল্লাহ <span>আল মামুন</span></span>
     </a>
 
     <ul id="navMenu">
-        <li><a href="index.html#home" class="nav-link">Home</a></li>
-        <li><a href="bio.html" class="nav-link active">Bio</a></li>
-        <li><a href="index.html#experience" class="nav-link">Experience</a></li>
-        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="index.html#home" class="nav-link"><span data-lang="en">Home</span><span data-lang="bn">হোম</span></a></li>
+        <li><a href="bio.html" class="nav-link active"><span data-lang="en">Bio</span><span data-lang="bn">পরিচিতি</span></a></li>
+        <li><a href="index.html#experience" class="nav-link"><span data-lang="en">Experience</span><span data-lang="bn">অভিজ্ঞতা</span></a></li>
+        <li><a href="index.html#projects" class="nav-link"><span data-lang="en">Projects</span><span data-lang="bn">প্রজেক্ট</span></a></li>
+        <li><a href="index.html#skills" class="nav-link"><span data-lang="en">Skills</span><span data-lang="bn">দক্ষতা</span></a></li>
+        <li><a href="blog.html" class="nav-link"><span data-lang="en">Blog</span><span data-lang="bn">ব্লগ</span></a></li>
+        <li><a href="index.html#contact" class="nav-link"><span data-lang="en">Contact</span><span data-lang="bn">যোগাযোগ</span></a></li>
     </ul>
 
     <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="বাংলায় দেখুন">বাং</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">&#9790;</button>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
@@ -58,151 +64,182 @@
 
 <article class="post story">
 
-    <a class="back-link" href="bio.html">&larr; Back to bio</a>
+    <a class="back-link" href="bio.html"><span data-lang="en">&larr; Back to bio</span><span data-lang="bn">&larr; পরিচিতিতে ফিরুন</span></a>
 
     <header class="story-header">
-        <span class="post-meta">My Story</span>
-        <h1>From the banks of the Dakatia to Dhaka</h1>
-        <p class="story-intro">Where I come from, the family that raised me, and the schools, friends and workplace that shaped who I am.</p>
+        <span class="post-meta"><span data-lang="en">My Story</span><span data-lang="bn">আমার গল্প</span></span>
+        <h1><span data-lang="en">From the banks of the Dakatia to Dhaka</span><span data-lang="bn">ডাকাতিয়ার তীর থেকে ঢাকা</span></h1>
+        <p class="story-intro" data-lang="en">Where I come from, the family that raised me, and the schools, friends and workplace that shaped who I am.</p>
+        <p class="story-intro" data-lang="bn">আমি কোথা থেকে এসেছি, কোন পরিবারে বড় হয়েছি, আর কোন স্কুল, বন্ধু ও কর্মক্ষেত্র আমাকে আজকের আমি করে তুলেছে।</p>
 
         <div class="story-facts">
             <div class="fact">
-                <h4>Born</h4>
-                <p>March 2001, Jangalia, Cumilla</p>
+                <h4><span data-lang="en">Born</span><span data-lang="bn">জন্ম</span></h4>
+                <p><span data-lang="en">March 2001, Jangalia, Cumilla</span><span data-lang="bn">মার্চ ২০০১, জাঙ্গালিয়া, কুমিল্লা</span></p>
             </div>
             <div class="fact">
-                <h4>Hometown</h4>
-                <p>Shahrasti, Chandpur</p>
+                <h4><span data-lang="en">Hometown</span><span data-lang="bn">গ্রামের বাড়ি</span></h4>
+                <p><span data-lang="en">Shahrasti, Chandpur</span><span data-lang="bn">শাহরাস্তি, চাঁদপুর</span></p>
             </div>
             <div class="fact">
-                <h4>Now</h4>
-                <p>Dhaka</p>
+                <h4><span data-lang="en">Now</span><span data-lang="bn">বর্তমানে</span></h4>
+                <p><span data-lang="en">Dhaka</span><span data-lang="bn">ঢাকা</span></p>
             </div>
         </div>
     </header>
 
     <div class="story-toc" role="navigation" aria-label="Chapters">
-        <a href="#early-life">Early life</a>
-        <a href="#hometown">Hometown</a>
-        <a href="#family">Family</a>
-        <a href="#school">School</a>
-        <a href="#college">College</a>
-        <a href="#university">University</a>
-        <a href="#office">Office life</a>
+        <a href="#early-life"><span data-lang="en">Early life</span><span data-lang="bn">শৈশব</span></a>
+        <a href="#hometown"><span data-lang="en">Hometown</span><span data-lang="bn">গ্রামের বাড়ি</span></a>
+        <a href="#family"><span data-lang="en">Family</span><span data-lang="bn">পরিবার</span></a>
+        <a href="#school"><span data-lang="en">School</span><span data-lang="bn">স্কুল</span></a>
+        <a href="#college"><span data-lang="en">College</span><span data-lang="bn">কলেজ</span></a>
+        <a href="#university"><span data-lang="en">University</span><span data-lang="bn">বিশ্ববিদ্যালয়</span></a>
+        <a href="#office"><span data-lang="en">Office life</span><span data-lang="bn">অফিস জীবন</span></a>
     </div>
 
     <div class="chapters">
 
-        <!-- To add photos to a chapter, put the image in images/story/ and add a
+        <!-- Photos: put the image in images/story/ and replace a chapter's
+             <figure class="photo-placeholder">...</figure> with
              <figure><img src="images/story/file.jpg" alt="..."><figcaption>Caption</figcaption></figure>
-             inside that chapter's <div class="gallery">. Empty galleries stay hidden. -->
+             Add more <figure>s to the same .gallery for extra photos. -->
 
         <div class="chapter" id="early-life">
             <div class="chapter-marker">🌱</div>
             <div class="chapter-body">
-                <span class="chapter-when">2001 &nbsp;·&nbsp; Cumilla</span>
-                <h2>Early life</h2>
-                <p>I was born in March 2001 in Jangalia, Cumilla, the busy part of the city around its central bus terminal. My first years of schooling were in Cumilla too, at Comilla Model School in Bakshinagar, Sujanagar, where I learned to read, write and make my first friends.</p>
-                <div class="gallery"></div>
+                <span class="chapter-when"><span data-lang="en">2001 &nbsp;·&nbsp; Cumilla</span><span data-lang="bn">২০০১ &nbsp;·&nbsp; কুমিল্লা</span></span>
+                <h2><span data-lang="en">Early life</span><span data-lang="bn">শৈশব</span></h2>
+                <p data-lang="en">I was born in March 2001 in Jangalia, Cumilla, the busy part of the city around its central bus terminal. My first years of schooling were in Cumilla too, at Comilla Model School in Bakshinagar, Sujanagar, where I learned to read, write and make my first friends.</p>
+                <p data-lang="bn">২০০১ সালের মার্চে কুমিল্লার জাঙ্গালিয়ায় আমার জন্ম, শহরের কেন্দ্রীয় বাস টার্মিনালকে ঘিরে ব্যস্ত একটি এলাকায়। পড়াশোনার প্রথম বছরগুলোও কেটেছে কুমিল্লাতেই, সুজানগরের বক্সিনগরে কুমিল্লা মডেল স্কুলে। সেখানেই পড়তে-লিখতে শিখি, পাই জীবনের প্রথম বন্ধুদের।</p>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="hometown">
             <div class="chapter-marker">🏞️</div>
             <div class="chapter-body">
-                <span class="chapter-when">Growing up &nbsp;·&nbsp; Shahrasti, Chandpur</span>
-                <h2>Hometown by the river</h2>
-                <p>Home, for me, is Shahrasti in Chandpur district. This is where I grew up, close to the Dakatia, the main river that winds through the upazila. Shahrasti shaped my childhood, and the values I learned there still travel with me in Dhaka.</p>
-                <div class="gallery"></div>
+                <span class="chapter-when"><span data-lang="en">Growing up &nbsp;·&nbsp; Shahrasti, Chandpur</span><span data-lang="bn">বেড়ে ওঠা &nbsp;·&nbsp; শাহরাস্তি, চাঁদপুর</span></span>
+                <h2><span data-lang="en">Hometown by the river</span><span data-lang="bn">নদীর ধারে আমার গ্রাম</span></h2>
+                <p data-lang="en">Home, for me, is Shahrasti in Chandpur district. This is where I grew up, close to the Dakatia, the main river that winds through the upazila. Shahrasti shaped my childhood, and the values I learned there still travel with me in Dhaka.</p>
+                <p data-lang="bn">আমার কাছে বাড়ি মানে চাঁদপুর জেলার শাহরাস্তি। এখানেই আমি বড় হয়েছি, উপজেলার প্রধান নদী ডাকাতিয়ার কাছে। শাহরাস্তি আমার শৈশব গড়ে দিয়েছে, আর সেখানে শেখা মূল্যবোধ আজও ঢাকায় আমার সঙ্গী।</p>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="family">
             <div class="chapter-marker">🏡</div>
             <div class="chapter-body">
-                <span class="chapter-when">The people behind me</span>
-                <h2>My family</h2>
-                <p>Everything I have achieved started at home. My family has always put education, faith and hard work first.</p>
+                <span class="chapter-when"><span data-lang="en">The people behind me</span><span data-lang="bn">আমার পেছনের মানুষগুলো</span></span>
+                <h2><span data-lang="en">My family</span><span data-lang="bn">আমার পরিবার</span></h2>
+                <p data-lang="en">Everything I have achieved started at home. My family has always put education, faith and hard work first.</p>
+                <p data-lang="bn">আমার সব অর্জনের শুরু ঘর থেকেই। আমার পরিবার সবসময় শিক্ষা, ধর্মবিশ্বাস ও পরিশ্রমকে সবার আগে রেখেছে।</p>
 
                 <div class="family-grid">
                     <div class="family-card">
-                        <span class="family-role">Father</span>
-                        <h3>Mowlana Kazi Salimullah</h3>
-                        <p>Former Principal of Rachia Madrasa. He now serves as the Nikah Registrar (Kazi) for Chitoshi Paschim Union, Shahrasti, Chandpur.</p>
+                        <span class="family-role"><span data-lang="en">Father</span><span data-lang="bn">বাবা</span></span>
+                        <h3><span data-lang="en">Mowlana Kazi Salimullah</span><span data-lang="bn">মাওলানা কাজী সলিমুল্লাহ</span></h3>
+                        <p data-lang="en">Former Principal of Rachia Madrasa. He now serves as the Nikah Registrar (Kazi) for Chitoshi Paschim Union, Shahrasti, Chandpur.</p>
+                        <p data-lang="bn">রাচিয়া মাদ্রাসার সাবেক অধ্যক্ষ। বর্তমানে তিনি চাঁদপুরের শাহরাস্তি উপজেলার চিতোষী পশ্চিম ইউনিয়নের নিকাহ রেজিস্ট্রার (কাজী) হিসেবে দায়িত্ব পালন করছেন।</p>
                     </div>
                     <div class="family-card">
-                        <span class="family-role">Mother</span>
-                        <h3>Jannatun Naim</h3>
-                        <p>A homemaker and the heart of our family, who has looked after all of us with endless care.</p>
+                        <span class="family-role"><span data-lang="en">Mother</span><span data-lang="bn">মা</span></span>
+                        <h3><span data-lang="en">Jannatun Naim</span><span data-lang="bn">জান্নাতুন নাঈম</span></h3>
+                        <p data-lang="en">A homemaker and the heart of our family, who has looked after all of us with endless care.</p>
+                        <p data-lang="bn">একজন গৃহিণী এবং আমাদের পরিবারের প্রাণ, যিনি অসীম যত্নে আমাদের সবাইকে আগলে রেখেছেন।</p>
                     </div>
                     <div class="family-card">
-                        <span class="family-role">Sister</span>
-                        <h3>Anika Tabassum</h3>
-                        <p>A third-year student in the Department of Zoology at the University of Dhaka.</p>
+                        <span class="family-role"><span data-lang="en">Sister</span><span data-lang="bn">বোন</span></span>
+                        <h3><span data-lang="en">Anika Tabassum</span><span data-lang="bn">আনিকা তাবাসসুম</span></h3>
+                        <p data-lang="en">A third-year student in the Department of Zoology at the University of Dhaka.</p>
+                        <p data-lang="bn">ঢাকা বিশ্ববিদ্যালয়ের প্রাণিবিদ্যা বিভাগের তৃতীয় বর্ষের শিক্ষার্থী।</p>
                     </div>
                     <div class="family-card">
-                        <span class="family-role">Brother</span>
-                        <h3>My younger brother</h3>
-                        <p>Studying in the second year of Alim at Darunnajat Siddiquia Kamil Madrasah, Demra, Dhaka.</p>
+                        <span class="family-role"><span data-lang="en">Brother</span><span data-lang="bn">ভাই</span></span>
+                        <h3><span data-lang="en">My younger brother</span><span data-lang="bn">আমার ছোট ভাই</span></h3>
+                        <p data-lang="en">Studying in the second year of Alim at Darunnajat Siddiquia Kamil Madrasah, Demra, Dhaka.</p>
+                        <p data-lang="bn">ঢাকার ডেমরায় দারুননাজাত সিদ্দীকিয়া কামিল মাদ্রাসায় আলিম দ্বিতীয় বর্ষে পড়ছে।</p>
                     </div>
                 </div>
-                <div class="gallery"></div>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="school">
             <div class="chapter-marker">📚</div>
             <div class="chapter-body">
-                <span class="chapter-when">Class 6 – 10 &nbsp;·&nbsp; Shahrasti</span>
-                <h2>School days</h2>
-                <p>My high school years were spent in Shahrasti. I started Class 6 at Nizmeher Model Pilot High School, spent Classes 7 and 8 at Shahrasti Model School, and then returned to Nizmeher Model Pilot High School for Classes 9 and 10 in the Science group.</p>
-                <p>In Class 10 I was the <strong>first boy in my class</strong>, a result I'm still proud of and one that taught me what steady effort can do.</p>
+                <span class="chapter-when"><span data-lang="en">Class 6 – 10 &nbsp;·&nbsp; Shahrasti</span><span data-lang="bn">ষষ্ঠ – দশম শ্রেণি &nbsp;·&nbsp; শাহরাস্তি</span></span>
+                <h2><span data-lang="en">School days</span><span data-lang="bn">স্কুলজীবন</span></h2>
+                <p data-lang="en">My high school years were spent in Shahrasti. I started Class 6 at Nizmeher Model Pilot High School, spent Classes 7 and 8 at Shahrasti Model School, and then returned to Nizmeher Model Pilot High School for Classes 9 and 10 in the Science group.</p>
+                <p data-lang="bn">মাধ্যমিকের বছরগুলো কেটেছে শাহরাস্তিতে। ষষ্ঠ শ্রেণিতে নিজমেহার মডেল পাইলট উচ্চ বিদ্যালয়ে পড়ি, সপ্তম ও অষ্টম শ্রেণি শাহরাস্তি মডেল স্কুলে, তারপর নবম ও দশম শ্রেণিতে বিজ্ঞান বিভাগে আবার নিজমেহার মডেল পাইলট উচ্চ বিদ্যালয়ে ফিরে আসি।</p>
+                <p data-lang="en">In Class 10 I was the <strong>first boy in my class</strong>, a result I'm still proud of and one that taught me what steady effort can do.</p>
+                <p data-lang="bn">দশম শ্রেণিতে আমি <strong>ক্লাসে প্রথম</strong> হই। এই ফলাফল নিয়ে আজও গর্ব করি, আর এটিই আমাকে শিখিয়েছে নিয়মিত পরিশ্রম কী করতে পারে।</p>
                 <ul class="milestones">
-                    <li><span>Class 6</span> Nizmeher Model Pilot High School</li>
-                    <li><span>Class 7 – 8</span> Shahrasti Model School</li>
-                    <li><span>Class 9 – 10</span> Nizmeher Model Pilot High School, Science &nbsp;·&nbsp; First in class</li>
+                    <li><span><span data-lang="en">Class 6</span><span data-lang="bn">ষষ্ঠ শ্রেণি</span></span> <span data-lang="en">Nizmeher Model Pilot High School</span><span data-lang="bn">নিজমেহার মডেল পাইলট উচ্চ বিদ্যালয়</span></li>
+                    <li><span><span data-lang="en">Class 7 – 8</span><span data-lang="bn">সপ্তম – অষ্টম</span></span> <span data-lang="en">Shahrasti Model School</span><span data-lang="bn">শাহরাস্তি মডেল স্কুল</span></li>
+                    <li><span><span data-lang="en">Class 9 – 10</span><span data-lang="bn">নবম – দশম</span></span> <span data-lang="en">Nizmeher Model Pilot High School, Science &nbsp;·&nbsp; First in class</span><span data-lang="bn">নিজমেহার মডেল পাইলট উচ্চ বিদ্যালয়, বিজ্ঞান &nbsp;·&nbsp; ক্লাসে প্রথম</span></li>
                 </ul>
-                <div class="gallery"></div>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="college">
             <div class="chapter-marker">🎓</div>
             <div class="chapter-body">
-                <span class="chapter-when">HSC &nbsp;·&nbsp; Haziganj, Chandpur</span>
-                <h2>College life</h2>
-                <p>For my higher secondary studies I went to Haziganj Model Government College in Chandpur, one of the leading colleges in the area, where I studied in the Science group.</p>
-                <div class="gallery"></div>
+                <span class="chapter-when"><span data-lang="en">HSC &nbsp;·&nbsp; Haziganj, Chandpur</span><span data-lang="bn">এইচএসসি &nbsp;·&nbsp; হাজীগঞ্জ, চাঁদপুর</span></span>
+                <h2><span data-lang="en">College life</span><span data-lang="bn">কলেজজীবন</span></h2>
+                <p data-lang="en">For my higher secondary studies I went to Haziganj Model Government College in Chandpur, one of the leading colleges in the area, where I studied in the Science group.</p>
+                <p data-lang="bn">উচ্চ মাধ্যমিকে আমি চাঁদপুরের হাজীগঞ্জ মডেল সরকারি কলেজে বিজ্ঞান বিভাগে পড়েছি, যা এলাকার অন্যতম সেরা কলেজ।</p>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="university">
             <div class="chapter-marker">🏛️</div>
             <div class="chapter-body">
-                <span class="chapter-when">BA in English &nbsp;·&nbsp; Dhaka</span>
-                <h2>University life</h2>
-                <p>University brought me to Dhaka. I studied English at Dhaka College, one of the oldest educational institutions in the country, founded in 1841 and affiliated with the University of Dhaka.</p>
-                <p>Outside the classroom I served as <strong>Treasurer of the Language Club</strong>, my first real taste of managing money, people and events, and an early sign of the operations work I would later love.</p>
-                <div class="gallery"></div>
+                <span class="chapter-when"><span data-lang="en">BA in English &nbsp;·&nbsp; Dhaka</span><span data-lang="bn">ইংরেজিতে বিএ &nbsp;·&nbsp; ঢাকা</span></span>
+                <h2><span data-lang="en">University life</span><span data-lang="bn">বিশ্ববিদ্যালয়জীবন</span></h2>
+                <p data-lang="en">University brought me to Dhaka. I studied English at Dhaka College, one of the oldest educational institutions in the country, founded in 1841 and affiliated with the University of Dhaka.</p>
+                <p data-lang="bn">উচ্চশিক্ষার জন্য ঢাকায় আসি। ঢাকা বিশ্ববিদ্যালয়ের অধিভুক্ত ঢাকা কলেজে ইংরেজি বিভাগে পড়েছি। ১৮৪১ সালে প্রতিষ্ঠিত এই কলেজ দেশের প্রাচীনতম শিক্ষাপ্রতিষ্ঠানগুলোর একটি।</p>
+                <p data-lang="en">Outside the classroom I served as <strong>Treasurer of the Language Club</strong>, my first real taste of managing money, people and events, and an early sign of the operations work I would later love.</p>
+                <p data-lang="bn">ক্লাসের বাইরে আমি <strong>ল্যাঙ্গুয়েজ ক্লাবের কোষাধ্যক্ষ</strong> ছিলাম। অর্থ, মানুষ ও অনুষ্ঠান সামলানোর প্রথম বাস্তব অভিজ্ঞতা এখানেই, আর পরে যে অপারেশনসের কাজ ভালোবেসে ফেলি, তার প্রথম আভাসও।</p>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
         <div class="chapter" id="office">
             <div class="chapter-marker">💼</div>
             <div class="chapter-body">
-                <span class="chapter-when">Dec 2021 – today &nbsp;·&nbsp; Gcontent, Dhaka</span>
-                <h2>Office life</h2>
-                <p>Gcontent was my first workplace, and it still is. I joined in December 2021 as a Junior Graphic Designer and have grown with the company ever since, through social media, HR &amp; Admin, and now as Administrative Coordinator.</p>
-                <p>More than the job titles, it's the people I remember: so many colleagues who became friends, office celebrations, hangouts after work, and plenty of buffets along the way. Great times, and many more memories still being made.</p>
-                <div class="gallery"></div>
+                <span class="chapter-when"><span data-lang="en">Dec 2021 – today &nbsp;·&nbsp; Gcontent, Dhaka</span><span data-lang="bn">ডিসেম্বর ২০২১ – বর্তমান &nbsp;·&nbsp; Gcontent, ঢাকা</span></span>
+                <h2><span data-lang="en">Office life</span><span data-lang="bn">অফিস জীবন</span></h2>
+                <p data-lang="en">Gcontent was my first workplace, and it still is. I joined in December 2021 as a Junior Graphic Designer and have grown with the company ever since, through social media, HR &amp; Admin, and now as Administrative Coordinator.</p>
+                <p data-lang="bn">Gcontent আমার প্রথম কর্মস্থল, এবং এখনো সেখানেই আছি। ২০২১ সালের ডিসেম্বরে জুনিয়র গ্রাফিক ডিজাইনার হিসেবে যোগ দিই। তারপর সোশ্যাল মিডিয়া, এইচআর ও অ্যাডমিন হয়ে এখন অ্যাডমিনিস্ট্রেটিভ কো-অর্ডিনেটর; প্রতিষ্ঠানের সঙ্গে সঙ্গেই আমিও বেড়ে উঠেছি।</p>
+                <p data-lang="en">More than the job titles, it's the people I remember: so many colleagues who became friends, office celebrations, hangouts after work, and plenty of buffets along the way. Great times, and many more memories still being made.</p>
+                <p data-lang="bn">পদবির চেয়েও বেশি মনে থাকে মানুষগুলোকে: কত সহকর্মী বন্ধু হয়ে গেছেন, অফিসের উদযাপন, কাজের পরের আড্ডা, আর অসংখ্য বুফে। দারুণ সময় কেটেছে, আর আরও অনেক স্মৃতি এখনো তৈরি হচ্ছে।</p>
+                <div class="gallery">
+                    <figure class="photo-placeholder"><span aria-hidden="true">📷</span><figcaption><span data-lang="en">Photo coming soon</span><span data-lang="bn">ছবি শিগগিরই আসছে</span></figcaption></figure>
+                </div>
             </div>
         </div>
 
     </div>
 
     <div class="post-footer">
-        <p>Want to know more about my work? <a href="bio.html">Read my professional bio</a> or <a href="index.html#contact">get in touch</a>.</p>
-        <a class="back-link" href="bio.html">&larr; Back to bio</a>
+        <p data-lang="en">Want to know more about my work? <a href="bio.html">Read my professional bio</a> or <a href="index.html#contact">get in touch</a>.</p>
+        <p data-lang="bn">আমার কাজ সম্পর্কে আরও জানতে চান? <a href="bio.html">আমার পেশাগত পরিচিতি পড়ুন</a> অথবা <a href="index.html#contact">যোগাযোগ করুন</a>।</p>
+        <a class="back-link" href="bio.html"><span data-lang="en">&larr; Back to bio</span><span data-lang="bn">&larr; পরিচিতিতে ফিরুন</span></a>
     </div>
 
 </article>
@@ -210,7 +247,7 @@
 </main>
 
 <footer>
-    <p>&copy; <span id="year"></span> Abdullah Al Mamun. Built with intention, automated where it made sense.</p>
+    <p>&copy; <span id="year"></span> <span data-lang="en">Abdullah Al Mamun. Built with intention, automated where it made sense.</span><span data-lang="bn">আব্দুল্লাহ আল মামুন। যত্ন নিয়ে তৈরি, যেখানে দরকার সেখানে অটোমেটেড।</span></p>
 </footer>
 
 <button class="to-top" id="toTop" type="button" aria-label="Back to top">&uarr;</button>
