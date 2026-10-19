@@ -164,3 +164,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+// ----- Copy-to-clipboard buttons (bio page) -----
+document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var target = document.getElementById(btn.getAttribute('data-copy'));
+        if (!target) return;
+        var text = target.textContent.trim();
+
+        function done(ok) {
+            btn.textContent = ok ? 'Copied!' : 'Press Ctrl+C';
+            setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+        } else {
+            var range = document.createRange();
+            range.selectNodeContents(target);
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) {}
+            done(ok);
+        }
+    });
+});
