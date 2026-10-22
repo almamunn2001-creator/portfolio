@@ -1222,3 +1222,11 @@ html[lang="bn"] .chapter-body p { line-height: 1.75; }
     .family-featured { grid-template-columns: 1fr; }
     .family-photo { height: 240px; }
 }
+
+/* Two-up row for landscape photos (whole image shown, no cropping) */
+.gallery.gallery-wide { grid-template-columns: repeat(2, 1fr); }
+.gallery + .gallery { margin-top: 14px; }
+
+@media (max-width: 720px) {
+    .gallery.gallery-wide { grid-template-columns: 1fr; }
+}
