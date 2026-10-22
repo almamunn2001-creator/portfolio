@@ -1230,3 +1230,10 @@ html[lang="bn"] .chapter-body p { line-height: 1.75; }
 @media (max-width: 720px) {
     .gallery.gallery-wide { grid-template-columns: 1fr; }
 }
+
+/* Three-up row for portrait photos */
+.gallery.gallery-three { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 720px) {
+    .gallery.gallery-three { grid-template-columns: repeat(2, 1fr); }
+}
